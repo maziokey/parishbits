@@ -549,7 +549,7 @@ section {
   font-size: 14px;
 }
 .about .video-box {
-  background: url("../img/book2.png") center center no-repeat;
+  background: url("../img/parish001.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
@@ -739,6 +739,23 @@ section {
   margin-left: 60px;
   line-height: 24px;
   font-size: 14px;
+}
+
+.services .cta-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+  background: #428bca;
+  color: #fff;
+}
+.services .cta-btn:hover {
+  background: #5697d0;
 }
 
 /*--------------------------------------------------------------

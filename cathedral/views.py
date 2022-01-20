@@ -11,6 +11,15 @@ from .forms import ContactForm
 class HomePageView(TemplateView):
     template_name = 'cathedral/home.html'
 
+class ParishPageView(TemplateView):
+    template_name = 'cathedral/parishes.html'
+
+class GalleryPageView(TemplateView):
+    template_name = 'cathedral/gallery.html'
+
+class ContactPageView(TemplateView):
+    template_name = 'cathedral/contact.html'
+
 def inject_form(request):
     return {'form': ContactForm()}
 

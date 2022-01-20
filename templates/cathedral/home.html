@@ -19,8 +19,8 @@
         <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-4.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animated fadeInDown">Welcome to <span>AbujaPR</span></h2>
-              <p class="animated fadeInUp">We connect you to the closest worshipping communities around you.</p>
+              <h2 class="animated fadeInDown">Welcome to <span>ParishBits</span></h2>
+              <p class="animated fadeInUp">We connect you to the closest parish around you.</p>
               <a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
             </div>
           </div>
@@ -30,8 +30,8 @@
         <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-5.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animated fadeInDown">Find a worshipping community around you</h2>
-              <p class="animated fadeInUp">Stay connected to your community, no matter where you are in the world.</p>
+              <h2 class="animated fadeInDown">Find a parish around you</h2>
+              <p class="animated fadeInUp">Stay connected to your parish, no matter where you are in the world.</p>
               <a href="#portfolio" class="btn-get-started animated fadeInUp scrollto">Find</a>
             </div>
           </div>
@@ -68,25 +68,25 @@
           <div class="row justify-content-center">
 
               <div class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                <h3>AbujaPR</h3>
-                <p>A collection of worshipping communities.</p>
+                <h3>ParishBits</h3>
+                <p>A collection of Parishes around you.</p>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                  <h4 class="title"><a href="">Communities</a></h4>
-                  <p class="description">Find a community.</p>
+                  <h4 class="title"><a href="{% url 'cathedral:parish' %}">Parishes</a></h4>
+                  <p class="description">Find a Parish.</p>
                 </div>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-gift"></i></div>
-                  <h4 class="title"><a href="">Activities</a></h4>
-                  <p class="description">Browse its activities.</p>
+                  <h4 class="title"><a href="{% url 'cathedral:gallery' %}">Activities</a></h4>
+                  <p class="description">Browse parish activities.</p>
                 </div>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-atom"></i></div>
-                  <h4 class="title"><a href="">Engage</a></h4>
-                  <p class="description">Engage with community members.</p>
+                  <h4 class="title"><a href="#">Engage</a></h4>
+                  <p class="description">Engage with Parishioners.</p>
                 </div>
   
               </div>
@@ -133,57 +133,62 @@
         <div class="text-center">
           <h3>Enroll a Community</h3>
           <p> Are you a leader or member of a community not listed on Prisus? Contact us today to get your community enrolled.</p>
-          <a class="cta-btn" href="#contact">Contact Us</a>
+          <a class="cta-btn" href="{% url 'cathedral:contact' %}">Contact Us</a>
         </div>
 
       </div>
     </section><!-- End Cta Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+     <!-- ======= Services Section ======= -->
+     <section id="services" class="services">
       <div class="container-fluid">
 
         <div class="section-title">
           <h2>Parishes</h2>
-          <h3>Find your <span>Community</span></h3>
-          <p>Have a look at the communities on our platform. There might be one right next to you.</p>
+          <h3>Find Your <span>Parish</span></h3>
+          <p>Have a look at the parishes on our platform. There might be one right next to you.</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Parishes</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container justify-content-center">
-
+        <div class="row justify-content-center">
           <div class="col-xl-10">
             <div class="row">
-
-              <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                  <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>St Kevins, Jikwoyi</h4>
-                    <p>App</p>
-                    <div class="portfolio-links">
-                      <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="St Kevins, Jikwoyi"><i class="bx bx-plus"></i></a>
-                      <a href="{% host_url 'stkevins:stkevins' host 'stkevinsjikwoyi' %}" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End portfolio item -->
-
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-pie-chart-line"></i></div>
+                <h4 class="title"><a href="#">St Kevins, Jikwoyi</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-stack-line"></i></div>
+                <h4 class="title"><a href="#">Holy Rosary, Wuse</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-markup-line"></i></div>
+                <h4 class="title"><a href="#">Holy Family, Lifecamp</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-shape-line"></i></div>
+                <h4 class="title"><a href="#">St John, Gwagwalada</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-fingerprint-line"></i></div>
+                <h4 class="title"><a href="#">St Ignatius, Bwari</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-body-scan-line"></i></div>
+                <h4 class="title"><a href="#">St Gregory, Wuye.</a></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+                <a class="btn btn-primary" href="{% url 'cathedral:parish' %}" role="button">Find Your Parish</a>
+              </div>
             </div>
           </div>
-
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Services Section -->
+
+    
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
