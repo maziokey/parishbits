@@ -1,0 +1,100 @@
+{% extends 'stkev_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Event {% endblock title %}
+
+{% block content %}
+    <!-- page header
+    ================================================== -->
+    <section class="page-header page-header--events">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Upcoming Events</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+
+    <!-- page content
+    ================================================== -->
+    <section class="page-content">
+
+        <div class="row">
+            <div class="column">
+
+                <div class="media-wrap event-thumb">
+                        <img src="{% static 'assets/img/thumbs/events/event-1000.jpg' %}"
+                          srcset="{% static 'assets/img/thumbs/events/event-2000.jpg' %} 2000w, 
+                                  {% static 'assets/img/thumbs/events/event-1000.jpg' %} 1000w, 
+                                  {% static 'assets/img/thumbs/events/event-500.jpg' %} 500w" sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                </div> <!-- end media-wrap -->
+
+                <div class="event-content">
+
+                    <div class="event-title">
+                        <h2 class="display-1">{{ event.title }}</h2>
+                    </div>
+
+                    {{ event.content }}
+
+                    <ul class="event-meta">
+                        <li><strong>Date</strong>{{ event.date|date:"l, F j, Y" }}</li>
+                        <li><strong>Time</strong>{{ event.time }}</li>
+                        <li><strong>Venue</strong>{{ event.venue }}</li>
+                        <li><strong>Announcer</strong>{{ event.announcer }}</li>
+                    </ul>
+
+                </div> <!-- end event-content -->
+
+
+            </div>
+        </div>
+
+    </section> <!-- end page content -->
+
+
+    <!-- Social
+    ================================================== -->
+    <section class="s-social">
+            
+        <div class="row social-content">
+            <div class="column">
+                <ul class="social-list">
+                    <li class="social-list__item">
+                        <a href="#0" title="">
+                            <span class="social-list__icon social-list__icon--facebook"></span>
+                            <span class="social-list__text">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="#0" title="">
+                            <span class="social-list__icon social-list__icon--twitter"></span>
+                            <span class="social-list__text">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="#0" title="">
+                            <span class="social-list__icon social-list__icon--instagram"></span>
+                            <span class="social-list__text">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="social-list__item">
+                        <a href="#0" title="">
+                            <span class="social-list__icon social-list__icon--email"></span>
+                            <span class="social-list__text">Email</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- end social-content -->
+
+    </section> <!-- end s-social -->
+{% endblock content %}

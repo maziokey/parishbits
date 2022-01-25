@@ -1550,3 +1550,8 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+.gallery-cards {
+  margin: 50px;
+  padding: 50px;
+}

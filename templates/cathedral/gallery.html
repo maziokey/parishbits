@@ -19,28 +19,112 @@
         <div class="row justify-content-center">
           <div class="col-xl-10">
             <ol>
-              <li><a href="#">Home</a></li>
+              <li><a href="{% url 'cathedral:home' %}">Home</a></li>
               <li>Gallery</li>
             </ol>
-            <h2>Inner Page</h2>
           </div>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <section class="inner-page">
-      <div class="container-fluid">
 
-        <div class="row justify-content-center">
-          <div class="col-xl-10">
-            <div class="row">
-              <p>
-                Example inner page template
-              </p>
-            </div>
-          </div>
+    <section class="bg-light pt-5 pb-5 shadow-sm">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Parishes</h2>
+          <h3>Activities on <span>ParishBits</span></h3>
+          <p>For enquiries about any of the Activities listed below, Click on details.</p>
         </div>
+
+        <div class="d-grid gap-3">
+
+          <div class="p-2 bg-light">
+
+            <div class="row">
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+              <div class="col-sm-6 d-flex">
+                <div class="card">
+                  <h5 class="card-header">St Kevins, Jikwoyi</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Catholic Charismatic Renewal</h5>
+                    <p class="card-text">The Catholic Charismatic Renewal, Dove of peace chapter will be holding a crusade this wednesday. Parishioners should endeavour to attend.</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">2nd February, 2022</li>
+                    <li class="list-group-item">7:00PM</li>
+                    <li class="list-group-item">Parish Auditorium</li>
+                  </ul>
+                </div>
+              </div>
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+              <div class="col-sm-6 d-flex">
+                <div class="card">
+                  <h5 class="card-header">Holy Rosary, Wuse</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Marriage Course</h5>
+                    <p class="card-text">The first marriage course for the year will commence on thelast saturday of the month. Intending couples are advised to register on or before the commencement date.</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">29th January, 2022</li>
+                    <li class="list-group-item">4:00PM</li>
+                    <li class="list-group-item">Mass Center</li>
+                  </ul>
+                </div>
+              </div>
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+            </div>
+
+          </div>
+
+          <div class="p-2 bg-light">
+
+            <div class="row">
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+              <div class="col-sm-6 d-flex align-items-stretch">
+                <div class="card">
+                  <h5 class="card-header">St Kevins, Jikwoyi</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Catholic Charismatic Renewal</h5>
+                    <p class="card-text">The Catholic Charismatic Renewal, Dove of peace chapter will be holding a crusade this wednesday. Parishioners should endeavour to attend.</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">2nd February, 2022</li>
+                    <li class="list-group-item">7:00PM</li>
+                    <li class="list-group-item">Parish Auditorium</li>
+                  </ul>
+                </div>
+              </div>
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+              <div class="col-sm-6 d-flex align-items-stretch">
+                <div class="card">
+                  <h5 class="card-header">Holy Rosary, Wuse</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Marriage Course</h5>
+                    <p class="card-text">The first marriage course for the year will commence on thelast saturday of the month. Intending couples are advised to register on or before the commencement date.</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">29th January, 2022</li>
+                    <li class="list-group-item">4:00PM</li>
+                    <li class="list-group-item">Mass Center</li>
+                  </ul>
+                </div>
+              </div>
+              <!--ADD CLASSES HERE d-flex align-items-stretch-->
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
+
+    
 
 {% endblock content %}

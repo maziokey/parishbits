@@ -1,0 +1,3 @@
+add content to parishes
+add content to gallery
+change slides on home

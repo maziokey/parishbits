@@ -1,0 +1,127 @@
+{% extends 'stkev_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Gallery {% endblock title %}
+
+{% block content %}
+
+    <section class="page-header page-header--about">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Gallery</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+    <section class="page-content">
+
+        <div class="row half-bottom">
+
+            <div class="column large-12 tab-full">
+
+                <h3>Harvest of Peace</h3>
+                <p>
+                    <a href="#">
+                        <img src="{% static 'assets/img/wheel-500.jpg' %}" 
+                    srcset="{% static 'assets/img/wheel-1000.jpg' %} 1000w, 
+                    {% static 'assets/img/wheel-500.jpg' %} 500w" 
+                    sizes="(max-width: 1000px) 100vw, 1000px" alt="">
+                    </a>
+                </p>
+
+            </div>
+
+            <div class="column large-6 tab-full">
+                    
+                <h2>Sponsor A Seminarian</h2>
+                <p>Doloremque dolor voluptas est sequi omnis. Pariatur ut aut. Sed enim tempora qui veniam qui cum vel. 
+                Voluptas odit at vitae minima. In assumenda ut. Voluptatem totam impedit accusantium reiciendis excepturi aut qui accusamus praesentium.</p>
+
+                <p>
+                    <a class="btn btn--primary h-full-width" href="#0">More</a>
+                </p>
+
+            </div>
+
+            <div class="column large-6 tab-full">
+
+                <h3>Parish Bazaar Clip</h3>
+
+                <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/14592941?color=00a650&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+                </div>
+
+            </div>
+
+            <div class="column large-full">
+
+                <h3>Parish Community Donations</h3>
+                <p>Communities and their donations so far.</p>
+
+                <div class="table-responsive">
+
+                    <table>
+                            <thead>
+                            <tr>
+                                <th>Community</th>
+                                <th>Members</th>
+                                <th>Target</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Legion of Mary</td>
+                                <td>15</td>
+                                <td>N100,000</td>
+                                <td>N20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Precious Heart of Jesus</td>
+                                <td>20</td>
+                                <td>N100,000</td>
+                                <td>N50,000</td>
+                            </tr>
+                            </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="column large-6 tab-full">
+
+                <h3>Skylark Pharmacies and Cosmetics Limited</h3>
+                <p>
+                    <img src="{% static 'assets/img/wheel-500.jpg' %}" 
+                    srcset="{% static 'assets/img/wheel-1000.jpg' %} 1000w, 
+                    {% static 'assets/img/wheel-500.jpg' %} 500w" 
+                    sizes="(max-width: 1000px) 100vw, 1000px" alt="">
+                </p>
+
+            </div>
+
+            <div class="column large-6 tab-full">
+
+                <h3>Common Entrace Exams for Regina Pacis Girls College</h3>
+                <p>
+                    <img src="{% static 'assets/img/wheel-500.jpg' %}" 
+                    srcset="{% static 'assets/img/wheel-1000.jpg' %} 1000w, 
+                    {% static 'assets/img/wheel-500.jpg' %} 500w" 
+                    sizes="(max-width: 1000px) 100vw, 1000px" alt="">
+                </p>
+
+            </div>
+            
+        </div> <!-- end row -->
+
+    </section>
+{% endblock content %}
