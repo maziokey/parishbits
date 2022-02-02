@@ -1,0 +1,62 @@
+{% extends 'stkev_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Search {% endblock title %}
+
+{% block content %}
+
+    <section class="page-header page-header--events">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Parishioners</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+    <section class="page-content">
+
+        <div class="row row-y-center series-content-p">
+
+            <div class="column large-full medium-full">
+                <h3 class="subhead">Results</h3>
+                <h2>Search Results</h2>
+                <p>Find Your Name from the list below.</p>
+
+                <div class="table-responsive">
+
+                    <table>
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID Number</th>
+                                <th>Registration Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for parishioner in object_list %}
+                            <tr>
+                                <td>{{ parishioner.name }}</td>
+                                <td><a href="{{ parishioner.get_absolute_url }}" title="parishioner ID"><strong>{{ parishioner.id_number }}</strong></a></td>
+                                <td>{{ parishioner.registration_date }}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            
+        </div> <!-- series-content -->
+        
+    </section>
+    
+{% endblock content %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, ListView, DetailView
+from django.db.models import Q
 
 from .models import Event, Sacrament, Society, Community, Parishioner, Levy, Contribution
 
@@ -8,7 +9,7 @@ class KevinsPageView(TemplateView):
     template_name = 'stkevins/stkevins_home.html'
 
 class EventListView(ListView):
-    model = Event
+    queryset = Event.published.all()
     context_object_name = 'event_list'
     paginate_by = 4
     template_name = 'stkevins/event_list.html'
@@ -65,26 +66,26 @@ class LevyListView(ListView):
     context_object_name = 'levy_list'
     template_name = 'stkevins/levy_list.html'
 
-class LevyDetailView(DetailView):
-    model = Levy
-    context_object_name = 'levy'
-    template_name = 'stkevins/levy_detail.html'
-
-    def get_object(self, queryset=None):
-        return Levy.objects.get(slug=self.kwargs.get("slug"))
+def levy_detail(request, year, month, day, levy):
+    levy = get_object_or_404(Levy, slug=levy,
+                                   publish__year=year,
+                                   publish__month=month,
+                                   publish__day=day)
+    
+    return render(request, 'stkevins/levy_detail.html', {'levy': levy,})
 
 class ContributionListView(ListView):
     model = Contribution
     context_object_name = 'contribution_list'
     template_name = 'stkevins/contribution_list.html'
 
-class ContributionDetailView(DetailView):
-    model = Contribution
-    context_object_name = 'contribution'
-    template_name = 'stkevins/contribution_detail.html'
-
-    def get_object(self, queryset=None):
-        return Contribution.objects.get(slug=self.kwargs.get("slug"))
+def contribution_detail(request, year, month, day, contribution):
+    contribution = get_object_or_404(Contribution, slug=contribution,
+                                   publish__year=year,
+                                   publish__month=month,
+                                   publish__day=day)
+    
+    return render(request, 'stkevins/contribution_detail.html', {'contribution': contribution,})
 
 class ParishionerListView(ListView):
     model = Parishioner
@@ -107,3 +108,14 @@ class HistoryPageView(TemplateView):
 
 class GalleryPageView(TemplateView):
     template_name = 'stkevins/gallery.html'
+
+class SearchResultsView(ListView):
+    model = Parishioner
+    template_name = 'stkevins/search_results.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = Parishioner.objects.filter(
+            Q(name__icontains=query) | Q(id_number__icontains=query)
+        )
+        return object_list

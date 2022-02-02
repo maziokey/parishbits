@@ -4,12 +4,14 @@
 
 {% load crispy_forms_tags %}
 
+{% load event_tags %}
+
 {% load hosts %}
 
 {% block content %}
     <!-- hero
     ================================================== -->
-    <section class="s-hero" data-parallax="scroll" data-image-src="{% static 'assets/img/hero-bg-3000.jpg' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section class="s-hero" data-parallax="scroll" data-image-src="{% static 'assets/img/home_bg.jpg' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="hero-left-bar"></div>
 
@@ -17,14 +19,14 @@
 
             <div class="column large-full hero-content__text">
                 <h1>
-                    We Exist To <br>
-                    Honor God And <br>
-                    Make Disciples
+                    Welcome To <br>
+                    Saint Kevin's <br>
+                    Parish Jikwoyi
                 </h1>
 
                 <div class="hero-content__buttons">
-                    <a href="#" class="btn btn--stroke">Upcoming Events</a>
-                    <a href="#" class="btn btn--stroke">About Us</a>
+                    <a href="{% url 'stkevins:event_list' %}" class="btn btn--stroke">Upcoming Events</a>
+                    <a href="{% url 'stkevins:history' %}" class="btn btn--stroke">History</a>
                 </div>
             </div> <!-- end hero-content__text -->
 
@@ -59,38 +61,41 @@
         <div class="row row-y-center about-content">
 
             <div class="column large-half medium-full">
-                <h3 class="subhead">Welcome to Hesed</h3>
-                <p class="lead">
-                Vero autem et officiis officia sint in odio in iusto. 
-                Blanditiis tempore ipsa saepe quaerat quas sed. Ut velit 
-                necessitatibus est repellat sunt quia fuga doloremque. 
-                Nostrum et ut optio suscipit eos quisquam et. Nulla molestiae 
-                voluptates hic et accusantium occaecati recusandae veniam cum.
+                <h3 class="subhead">St Kevin's, Jikwoyi</h3>
+                <p>
+                St Kevin's Parish, Jikwoyi is a community of Catholic Faithful drawn from Jikwoyi and parts of Karu, Mararaba and Orozo.
+                The Over 2000 member parish is pastored by Rev. Fr. Moses Jimbili (Parish Priest) and Rev. Fr. Sabastian Musa (Associate Priest), 
+                under the authority of His Grace, Most Rev. Dr. Ignatius Ayau Kaigama, Archbishop of the Metropolitan See of Abuja Ecclesiastical Province.
                 </p>
-                <a href="#" class="btn btn--primary btn--about">More About Hesed</a>
+                <p>
+                    Parishioners of St. Kevin's, known for their zeal and cheerful disposition, are predominantly traders, civil servants and peasants.
+                </p>
+                
+                <a href="{% url 'stkevins:history' %}" class="btn btn--primary btn--about">More</a>
             </div>
 
             <div class="column large-half medium-full">
                 <ul class="about-sched">
                     <li>
-                        <h4>Main Church Service</h4>
+                        <h4>Masses</h4>
                         <p>
-                        Sunday - 9:00 AM | 1:00 PM | 4:30 PM <br>
-                        1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                        Sundays - 6:00 AM | 8:00 AM | 10:00 AM <br>
+                        Weekdays - 6:00 AM | 12:00 PM | 6:00 PM <br>
+                        Mass Center, St Kevin's, Jikwoyi
                         </p>
                     </li>
                     <li>
-                        <h4>Kids Church</h4>
+                        <h4>Exposition</h4>
                         <p>
-                        Sunday - 9:00 AM | 1:00 PM | 4:30 PM <br>
-                        1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                        Weekdays - 5:45 AM <br>
+                        Mass Center, St Kevin's, Jikwoyi
                         </p>
                     </li>
                     <li>
-                        <h4>Prayer Meeting</h4>
+                        <h4>Confessions</h4>
                         <p>
-                        Saturday - 7:00 PM <br>
-                        1600 Amphitheatre Parkway, Mt. View, CA, 94043
+                        Saturdays - 07:00 AM <br>
+                        Mass Center, St Kevin's, Jikwoyi
                         </p>
                     </li>
                 </ul> <!-- end about-sched-->
@@ -107,30 +112,30 @@
 
         <div class="row connect-content">
             <div class="column large-half tab-full">
-                <h3 class="display-1">Volunteer With Us.</h3>
+                <h3 class="display-1">Register with us.</h3>
                 <p>
-                Delectus distinctio fuga commodi quod temporibus consequatur. 
-                Voluptatem dolor vel impedit. Totam ut vel nihil ab. Nostrum ipsa 
-                necessitatibus. Iste voluptatibus qui velit et voluptatem laudantium 
-                et explicabo. Dignissimos ut voluptatum laboriosam nisi fugiat.
-                Nulla dolores voluptate sit unde in doloribus est. Eveniet qui et 
-                quia pariatur consequatur officia facere aut.
+                At St Kevin's, we encourage our parishioners to become
+                registered members of this great catholic community.
+                Registered members enjoy unique benefits and have direct
+                access to previleges offered by the church. Click the 
+                link below to find out how to join and be part of this great 
+                catholic community. You are welcomed in the name of the Lord.
                 </p>
 
-                <a href="#" class="btn btn--primary h-full-width">I'm Interested</a>
+                <a href="{% url 'stkevins:contact' %}" class="btn btn--primary h-full-width">I'm Interested</a>
             </div>
             <div class="column large-half tab-full">
-                <h3 class="display-1">Join a Connect Group.</h3>
+                <h3 class="display-1">Join a Society.</h3>
                 <p>
-                Officia earum at quia recusandae. Tempora beatae est 
-                aliquam fugiat sed et. Exercitationem vitae molestiae 
-                officia eos aut id ad. Et exercitationem quae perspiciatis 
-                mollitia. Laborum quasi inventore eaque quia non.
-                Ipsa dignissimos ipsum nisi qui eos et iste magnam. Aut dolorum 
-                mollitia illum. Iste iure similique nobis fuga est amet. 
+                Being a registered member of St Kevin's Parish is a great first step.
+                Parishioners are also advised to join a pius society so as to 
+                participate actively in the mission of the church. There are many
+                interesting pius societies to join. To learn more about
+                the pius societies in St Kevin's Jikwoyi, click on the link
+                below. 
                 </p>
 
-                <a href="#" class="btn btn--primary h-full-width">Learn More</a>
+                <a href="{% url 'stkevins:society_list' %}" class="btn btn--primary h-full-width">Learn More</a>
             </div>
         </div> <!-- end connect-content  -->
 
@@ -149,74 +154,7 @@
 
         <div class="row block-large-1-2 block-900-full events-list">
 
-            <div class="column events-list__item">
-                <h3 class="display-1 events-list__item-title">
-                    <a href="#0" title="">2019 Kids Church Camp.</a>
-                </h3>
-                <p>
-                Et consequatur nihil odio odit voluptatem qui. Dolores doloribus 
-                cupiditate totam esse dolores quod. Magni aut incidunt fugiat 
-                labore est ut non ipsam nihil. Voluptate rerum dolores unde 
-                voluptas. Et similique praesentium dolor. Et quod 
-                eius sint at quae est dolores. Beatae quo facere hic.
-                </p>
-                <ul class="events-list__meta">
-                    <li class="events-list__meta-date">Saturday, September 28, 2019</li>
-                    <li class="events-list__meta-time">8:00AM - 5:30PM</li>
-                    <li class="events-list__meta-location">1600 Amphitheatre Parkway, Mt. View</li>
-                </ul>
-            </div> <!-- end events-list__item -->
-            <div class="column events-list__item">
-                <h3 class="display-1 events-list__item-title">
-                    <a href="#0" title="">Prayer Meeting.</a>
-                </h3>
-                <p>
-                Laborum distinctio minima doloribus reiciendis aut aliquid. 
-                Deleniti est adipisci ut quo ducimus eum ratione voluptas. 
-                Voluptatem tenetur rem ratione velit ut. Repudiandae atque 
-                perspiciatis est similique rerum nam qui iusto minus. Sapiente 
-                porro dolores consequatur optio animi aut facere.
-                </p>
-                <ul class="events-list__meta">
-                    <li class="events-list__meta-date">Saturday, July 27, 2019</li>
-                    <li class="events-list__meta-time">6:00PM - 8:30PM</li>
-                    <li class="events-list__meta-location">1600 Amphitheatre Parkway, Mt. View</li>
-                </ul>
-            </div> <!-- end events-list__item -->
-            <div class="column events-list__item">
-                <h3 class="display-1 events-list__item-title">
-                    <a href="#0" title="">Youth Convergence.</a>
-                </h3>
-                <p>
-                Laborum distinctio minima doloribus reiciendis aut aliquid. 
-                Deleniti est adipisci ut quo ducimus eum ratione voluptas. 
-                Voluptatem tenetur rem ratione velit ut. Repudiandae atque 
-                perspiciatis est similique rerum nam qui iusto minus. Sapiente 
-                porro dolores consequatur optio animi aut facere.
-                </p>
-                <ul class="events-list__meta">
-                    <li class="events-list__meta-date">Friday, July 26, 2019</li>
-                    <li class="events-list__meta-time">5:00PM - 6:30PM</li>
-                    <li class="events-list__meta-location">1600 Amphitheatre Parkway, Mt. View</li>
-                </ul>
-            </div> <!-- end events-list__item -->
-            <div class="column events-list__item">
-                <h3 class="display-1 events-list__item-title">
-                    <a href="#0" title="">Leadership Conference.</a>
-                </h3>
-                <p>
-                Optio temporibus suscipit magnam. Consequatur doloribus sed. 
-                Explicabo molestiae est minima. Distinctio quis optio architecto 
-                molestiae officia molestiae qui veniam minima. Nemo placeat ex 
-                dolor ratione qui autem eius vel. In dolorem aut enim aspernatur 
-                molestias nostrum.
-                </p>
-                <ul class="events-list__meta">
-                    <li class="events-list__meta-date">Sunday, July 28, 2019</li>
-                    <li class="events-list__meta-time">2:00PM - 5:30PM</li>
-                    <li class="events-list__meta-location">1600 Amphitheatre Parkway, Mt. View</li>
-                </ul>
-            </div> <!-- end events-list__item -->
+            {% recent_events %}
 
         </div> <!-- end events-list -->
 
@@ -227,44 +165,132 @@
     ================================================== -->
     <section class="s-series">
 
-        <div class="series-img" style="background-image: url('{% static 'assets/img/series-2000.jpg' %}');"></div>
+        <div class="series-img" style="background-image: url('{% static 'assets/img/series.jpg' %}');"></div>
 
         <div class="row row-y-center series-content">
 
             <div class="column large-half medium-full">
-                <h3 class="subhead">Current Series</h3>
-                <h2>Shape Your Life with the Words of Life.</h2>
-                <p>
-                Aut sed amet et quis aliquid laborum minus consequatur. Animi repellendus quas. 
-                Est voluptates minima ut dolorum aliquid sint. Ratione et et molestias rerum 
-                quibusdam. Deserunt suscipit ut expedita. Non numquam aut eum perferendis 
-                molestiae praesentium aliquid voluptatum numquam dolorum aliquid sint minima.
+                <h3 class="subhead">My Sunday Bread</h3>
+                <h2>10 Years in His Vineyard.</h2>
+                <p><a href="#"><img width="120" height="120" class="h-pull-left" alt="sample-image" src="{% static 'assets/img/moz.jpeg' %}"></a>
+                    Rev. Fr. Moses Jimbili is a priest of the Archdiocese of Abuja, ordained  
+                    December 17, 2011. He studied Philosophy and Theology at Saint Thomas Aquinas
+                    Major Seminary, Makurdi, an affiliate of the Pontifical Urbanian University, Rome.
+                    He is an ardent lover of God, a brilliant preacher of God's Word, a pastor per excellence
+                    an avid reader and a sportsman. 
                 </p>
+                
             </div> <!-- end column -->
 
             <div class="column large-half medium-full">
                 <div class="series-content__buttons">
-                    <a href="" class="btn btn--large h-full-width">Watch the Video</a>
-                    <a href="" class="btn btn--large h-full-width">Listen To the Message</a>
+                    <p>
+                        <img src="{% static 'assets/img/book.png' %}" alt="">
+                    </p>
                 </div>
 
                 <div class="series-content__subscribe">
                     <p>
-                    Never missed a message. Subscribe to our YouTube and Podcast channels.
+                    Grab a copy at your local parish bookshops.
                     </p>
-                    
-                    <ul class="series-content__subscribe-links">
-                        <li class="ss-apple-podcast"><a href="#0">Apple Podcast</a></li>
-                        <li class="ss-spotify"><a href="#0">Spotify</a></li>
-                        <li class="ss-soundcloud"><a href="#0">SoundCloud</a></li>
-                        <li class="ss-youtube"><a href="#0">Youtube</a></li>
-                    </ul>
                 </div>
             </div> <!-- end column -->
             
         </div> <!-- series-content -->
 
     </section> <!-- end s-series -->
+
+    <section class="page-content">
+
+        <div class="row">
+            <div class="column">
+
+                <div class="row">
+                    <div class="column large-12 tab-full">
+                        <h1 class="churchy">Are you committed to the work of spreading the Gospel through support for your local church?</h1>
+
+                        <h3 class="churchy">Pay To: </h3>
+
+                        <p class="churchy">
+                            <strong>Account Name: </strong>St. Kevins Catholic Church<br>
+                            <strong>Account Number: </strong>246789098643<br>
+                            <strong>Bank: </strong>Sterling Bank<br>
+                            <strong>Call the Cathecist on </strong>09046099098<br>
+                        </p>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="row ads">
+                    <div class="column large-4 tab-full adsdiv">
+
+                        <div class="mychurch-staff__picture">
+                            <img src="{% static 'assets/img/avatars/AMC.jpeg' %}" alt="">
+                        </div>
+
+                        <h3 class="churchy adstext">Annual Mission Collection (AMC).</h3>
+                        <p class="churchy adstext">
+                        It helps the church to<br>
+                        function from day to day.<br>
+                        Mon-Thur 8:30am – 4:30pm 
+                        </p>
+                    </div>
+
+                    <div class="column large-4 tab-full adsdiv">
+
+                        <div class="mychurch-staff__picture">
+                            <img src="{% static 'assets/img/avatars/levy.jpg' %}" alt="">
+                        </div>
+
+                        <h3 class="churchy adstext">Harvest Levy.</h3>
+                        <p class="churchy adstext">
+                        It helps the parish to undertake<br>
+                        capital intensive development projects <br>
+                        </p>
+                    </div>
+
+                    <div class="column large-4 tab-full adsdiv">
+
+                        <div class="mychurch-staff__picture">
+                            <img src="{% static 'assets/img/avatars/offering.jpg' %}" alt="">
+                        </div>
+
+                        <h3 class="churchy adstext">Mass Offering.</h3>
+                        <p class="churchy adstext">
+                            It helps the parish to procure<br>
+                            Sacristy items which are essential <br>
+                            for masses and the sacraments.
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column large-full">
+
+                        <h1>Adverts at St Kevins, Jikwoyi.</h1>
+        
+                        <div id="slideshow">
+        
+                            <div>  
+                              <img src="{% static 'assets/img/img1.jpg' %}">
+                            </div>
+                            <div>
+                              <img src="{% static 'assets/img/img2.jpg' %}">
+                            </div>
+                            <div>
+                              <img src="{% static 'assets/img/img3.jpg' %}">
+                            </div>
+        
+                        </div>
+        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section> <!-- end page-content -->
 
 
     <!-- Social

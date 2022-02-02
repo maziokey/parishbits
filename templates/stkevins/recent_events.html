@@ -1,0 +1,16 @@
+{% for event in latest_events %}
+<div class="column events-list__item">
+    <h3 class="display-1 events-list__item-title">
+        <a href="{{ event.get_absolute_url }}" title="">{{ event.title }}</a>
+    </h3>
+    <p>
+        {{ event.content|slice:":300" }}
+    </p>
+    <ul class="events-list__meta">
+        <li class="events-list__meta-date">{{ event.date|date:"l, F j, Y" }}</li>
+        <li class="events-list__meta-time">{{ event.time }}</li>
+        <li class="events-list__meta-location">{{ event.venue }}</li>
+        <li class="events-list__meta-megaphone">{{ event.announcer }}</li>
+    </ul>
+</div> <!-- end events-list__item -->
+{% endfor %}

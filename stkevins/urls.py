@@ -21,8 +21,16 @@ urlpatterns = [
     path('parishioners/', views.ParishionerListView.as_view(), name='parishioner_list'),
     path('parishioner/<slug:slug>/', views.ParishionerDetailView.as_view(), name='parishioner_detail'),
 
+    path('levy/', views.LevyListView.as_view(), name='levy_list'),
+    path('levy/<int:year>/<int:month>/<int:day>/<slug:levy>/', views.levy_detail, name='levy_detail'),
+
+    path('contribution/', views.ContributionListView.as_view(), name='contribution_list'),
+    path('contribution/<int:year>/<int:month>/<int:day>/<slug:contribution>/', views.contribution_detail, name='contrinution_detail'),
+
     path('history/', views.HistoryPageView.as_view(), name='history'),
     path('contact/', views.ContactPageView.as_view(), name='contact'),
     path('gallery/', views.GalleryPageView.as_view(), name='gallery'),
+
+    path('search/', views.SearchResultsView.as_view(), name='search_results'),
 
 ]

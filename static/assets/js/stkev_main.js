@@ -133,6 +133,24 @@
         });
     };
 
+    /* Image Slider
+    * ------------------------------------------------------ */
+    const ssImageSlider = function() {
+        
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() { 
+        $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .hide()
+            .appendTo('#slideshow');
+        },  8000);
+        
+    };
+
 
    /* Initialize
     * ------------------------------------------------------ */
@@ -143,7 +161,11 @@
         ssAlertBoxes();
         ssSmoothScroll();
         ssBackToTop();
+        ssImageSlider();
 
     })();
 
 })(jQuery);
+
+
+    

@@ -2982,6 +2982,140 @@ html.no-csstransitions .hero-content {
 }
 
 
+/* ------------------------------------------------------------------- 
+ * ## series content Parishioner
+ * ------------------------------------------------------------------- */
+ .series-content-p {
+  padding: 12rem 6.8rem 8.8rem;
+  max-width: 1340px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.series-content-p .column:first-child {
+  padding-right: 7.2rem;
+}
+
+.series-content-p .column:last-child {
+  padding-left: 7.2rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## series parishioner buttons 
+ * ------------------------------------------------------------------- */
+.series-content-p__buttons {
+  padding-bottom: 4.8rem;
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.series-content-p__buttons .btn {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.series-content-p__buttons .btn:hover,
+.series-content-p__buttons .btn:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.series-content-p__subscribe {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.867;
+  padding: 0 4rem;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * series parishioner
+ * ------------------------------------------------------------------- */
+ @media screen and (max-width:1400px) {
+  .series-content-p {
+    padding: 12rem 4rem 8.8rem;
+  }
+
+  .series-content-p .column:first-child {
+    padding-right: 4.4rem;
+  }
+
+  .series-content-p .column:last-child {
+    padding-left: 4.4rem;
+  }
+
+}
+
+@media screen and (max-width:1200px) {
+  .s-series {
+    padding-top: 13.6rem;
+    padding-bottom: 13.6rem;
+  }
+
+  .series-img {
+    left: 0;
+  }
+
+  .series-img::before {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .series-content-p {
+    max-width: 960px;
+  }
+
+  .series-content-p .column:first-child,
+  .series-content-p .column:last-child {
+    padding: 0 16px;
+  }
+
+}
+
+@media screen and (max-width:800px) {
+  .s-series h2 {
+    font-size: 4.8rem;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+  .s-series h2 {
+    font-size: 4.2rem;
+  }
+
+  .series-content-p {
+    padding: 0 25px;
+    border: none;
+  }
+
+  .series-content-p .column:first-child,
+  .series-content-p .column:last-child {
+    padding: 0 10px;
+  }
+
+  .series-content-p__subscribe-links a {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+}
+
+@media screen and (max-width:400px) {
+  .series-content-p {
+    padding: 0 22px;
+  }
+
+  .series-content-p .column:first-child,
+  .series-content-p .column:last-child {
+    padding: 0;
+  }
+
+}
+
 /* ===================================================================
  * # social  
  *
@@ -3025,6 +3159,14 @@ html.no-csstransitions .hero-content {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.social-list li h4 {
+  color: #ffffff;
+}
+
+.social-list li p {
+  color: #ffffff;
 }
 
 .social-list__icon {
@@ -3384,15 +3526,23 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--about {
-  background-image: url(../img/header-bgs/about-header-bg-2000.jpg);
+  background-image: url(../img/header-bgs/gallery.jpg);
+}
+
+.page-header--history {
+  background-image: url(../img/header-bgs/history2.jpg);
 }
 
 .page-header--contact {
-  background-image: url(../img/header-bgs/contact-header-bg-2000.jpg);
+  background-image: url(../img/header-bgs/contact.jpg);
 }
 
 .page-header--events {
-  background-image: url(../img/header-bgs/events-header-bg-2000.jpg);
+  background-image: url(../img/header-bgs/events-bg.jpg);
+}
+
+.page-header--eventss {
+  background-image: url(../img/header-bgs/events-bg2.jpg);
 }
 
 .page-header--connect {
@@ -3473,6 +3623,25 @@ html.no-csstransitions .hero-content {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+}
+
+.mychurch-staff__picture {
+  -webkit-flex: 0 0 8rem;
+  -ms-flex: 0 0 8rem;
+  flex: 0 0 8rem;
+  max-width: 8rem;
+  margin-right: 2rem;
+  margin: 0 auto;
+}
+
+.mychurch-staff__picture img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.churchy {
+  text-align: center;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3582,6 +3751,40 @@ html.no-csstransitions .hero-content {
     font-size: 4.2rem;
   }
 
+}
+
+#slideshow { 
+  margin: 50px auto; 
+  position: relative; 
+  width: auto; 
+  height: 500px; 
+  padding: 10px; 
+  
+}
+
+#slideshow > div { 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  bottom: 10px; 
+}
+
+.advert {
+  color: #ffffff;
+}
+
+.ads {
+  background: #3b0d11;
+}
+
+.adsdiv {
+  position: relative;
+  top: -30px;
+}
+
+.adstext {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */

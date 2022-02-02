@@ -1,3 +1,7 @@
 add content to parishes
 add content to gallery
 change slides on home
+
+add societies and communities list and detail pages
+
+modify model levy and contribution - name - lenght - 60

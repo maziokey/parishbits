@@ -6,6 +6,8 @@
 
 {% load hosts %}
 
+{% load event_tags %}
+
 {% block title %}ParishBits - Gallery{% endblock title %}
 
 {% block content %}
@@ -44,37 +46,7 @@
 
             <div class="row">
               <!--ADD CLASSES HERE d-flex align-items-stretch-->
-              <div class="col-sm-6 d-flex">
-                <div class="card">
-                  <h5 class="card-header">St Kevins, Jikwoyi</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">Catholic Charismatic Renewal</h5>
-                    <p class="card-text">The Catholic Charismatic Renewal, Dove of peace chapter will be holding a crusade this wednesday. Parishioners should endeavour to attend.</p>
-                    <a href="#" class="btn btn-primary">Details</a>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">2nd February, 2022</li>
-                    <li class="list-group-item">7:00PM</li>
-                    <li class="list-group-item">Parish Auditorium</li>
-                  </ul>
-                </div>
-              </div>
-              <!--ADD CLASSES HERE d-flex align-items-stretch-->
-              <div class="col-sm-6 d-flex">
-                <div class="card">
-                  <h5 class="card-header">Holy Rosary, Wuse</h5>
-                  <div class="card-body">
-                    <h5 class="card-title">Marriage Course</h5>
-                    <p class="card-text">The first marriage course for the year will commence on thelast saturday of the month. Intending couples are advised to register on or before the commencement date.</p>
-                    <a href="#" class="btn btn-primary">Details</a>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">29th January, 2022</li>
-                    <li class="list-group-item">4:00PM</li>
-                    <li class="list-group-item">Mass Center</li>
-                  </ul>
-                </div>
-              </div>
+              {% recent_stkevin_events 2 %}
               <!--ADD CLASSES HERE d-flex align-items-stretch-->
             </div>
 
@@ -128,3 +100,5 @@
     
 
 {% endblock content %}
+
+

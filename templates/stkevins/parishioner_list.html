@@ -1,14 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>event</title>
-</head>
-<body>
-    {% for parishioner in parishioner_list %}
-        <a href="{{ parishioner.get_absolute_url }}">{{ parishioner.name }}</a>
-    {% endfor %}
-</body>
-</html>
+{% extends 'stkev_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Parishioners {% endblock title %}
+
+{% block content %}
+
+    <!-- page header
+    ================================================== -->
+    <section class="page-header page-header--events">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Parishioners</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+    <section class="page-content">
+
+        <div class="row row-y-center series-content-p">
+
+            <div class="column large-half medium-full">
+                <h3 class="subhead">Parishioners' Profile</h3>
+                <h2>A Detailed Profile of our Parishioners.</h2>
+                <p>
+                    At St Kevin's Parish Jikwoyi, Our parishioners are the heartbeat of our 
+                    great community. Registered parishioners can search for and find information
+                    about themselves and other parishioners.
+                </p>
+                <p>
+                    To register and get your profile up on our website, visit the cathecist
+                    at the parish admin center or contact him using the following details: <br>
+                    <br>
+                    <strong>sayhello@hesed.com</strong> <br>
+                    <strong>+234 567 891 0123</strong>
+                </p>
+            </div> <!-- end column -->
+
+            <div class="column large-half medium-full">
+
+                <form action="{% url 'stkevins:search_results' %}" method="get">
+                    <div>
+                        <label for="sampleInput">Enter Your Name or ID Card Number</label>
+                        <input class="h-full-width" type="text" placeholder="John Sixtus or kev0001" id="sampleInput" name="q">
+                    </div>
+                
+                    <input class="btn--primary h-full-width" type="submit" value="Search">
+                </form>
+
+               
+            </div> <!-- end column -->
+            
+        </div> <!-- series-content -->
+        
+    </section>
+
+{% endblock content %}

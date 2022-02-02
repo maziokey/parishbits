@@ -1,0 +1,21 @@
+{% load hosts %}
+
+{% for event in latest_stkev_events %}
+
+    <div class="col-sm-6 d-flex">
+        <div class="card">
+        <h5 class="card-header">St Kevins, Jikwoyi</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{ event.title }}</h5>
+            <p class="card-text">{{ event.content|slice:":300" }}</p>
+            <a href="{% host_url 'stkevins:event_detail' event.publish.year event.publish.month event.publish.day event.slug host 'stkevinsjikwoyi' %}" class="btn btn-primary">Details</a>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ event.date|date:"l, F j, Y" }}</li>
+            <li class="list-group-item">{{ event.time }}</li>
+            <li class="list-group-item">{{ event.venue }}</li>
+        </ul>
+        </div>
+    </div>
+
+{% endfor %}

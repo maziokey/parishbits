@@ -55,8 +55,18 @@
     <header class="s-header">
 
         <div class="header-logo">
-            <a class="site-logo" href="#">
-                <img src="{% static 'assets/img/logo.svg' %}" alt="Homepage">
+            <a class="site-logo" href="{% url 'stkevins:stkevins' %}">
+                <svg height="100" width="600">
+                    <style>
+                        .heavy { font: bold 30px sans-serif; }
+                    
+                        /* Note that the color of the text is set with the    *
+                         * fill property, the color property is for HTML only */
+                        .Rrrrr { font: normal 15px sans-serif; }
+                      </style>
+                    <text x="0" y="39" fill="white" class="heavy">St Kevin's, Jikwoyi</text>
+                    <text x="0" y="60" fill="white" class="Rrrrr">Catholic Arch-Diocese of Abuja</text>
+                </svg>
             </a>
         </div>
 
@@ -88,13 +98,22 @@
             <div class="column large-4 medium-5 tab-full">
                 <div class="footer-logo">
                     <a class="site-footer-logo" href="#">
-                        <img src="{% static 'assets/img/logo.svg' %}" alt="Homepage">
+                        <svg height="100" width="600">
+                            <style>
+                                .heavy { font: bold 30px sans-serif; }
+                            
+                                /* Note that the color of the text is set with the    *
+                                 * fill property, the color property is for HTML only */
+                                .Rrrrr { font: normal 15px sans-serif; }
+                              </style>
+                            <text x="0" y="39" fill="white" class="heavy">St Kevin's, Jikwoyi</text>
+                            <text x="0" y="60" fill="white" class="Rrrrr">Catholic Arch-Diocese of Abuja</text>
+                        </svg>
                     </a>
                 </div>  <!-- footer-logo -->
                 <p>
-                Laborum ad explicabo. Molestiae voluptates est. Quisquam labore tenetur 
-                et assumenda voluptatibus a beatae. Rerum odio ducimus reprehenderit 
-                sit animi laborum nostrum dolorum animi voluptates est voluptatibus a beatae. 
+                    St Kevin's Parish, Jikwoyi is a community of Catholic Faithful drawn from 
+                    Jikwoyi and parts of Karu, Mararaba and Orozo.
                 </p>
             </div>
             <div class="column large-half tab-full">
@@ -102,9 +121,9 @@
                     <div class="column large-7 medium-full">
                         <h4 class="h6">Our Location</h4>
                         <p>
-                        1600 Amphitheatre Parkway <br>
-                        Mountain View, California <br>
-                        94043 US
+                        Phase 3, Jikwoyi <br>
+                        Abuja, Nigeria <br>
+                        94043
                         </p>
         
                         <p>
@@ -114,12 +133,11 @@
                     <div class="column large-5 medium-full">
                         <h4 class="h6">Quick Links</h4>
                         <ul class="footer-list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Volunteer</a></li>
-                            <li><a href="#">Connect Groups</a></li>
-                            <li><a href="#">Upcoming Events</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{% url 'stkevins:stkevins' %}">Home</a></li>
+                            <li><a href="{% url 'stkevins:history' %}">History</a></li>
+                            <li><a href="{% url 'stkevins:event_list' %}">Calendar</a></li>
+                            <li><a href="{% url 'stkevins:parishioner_list' %}">Parishioners</a></li>
+                            <li><a href="{% url 'stkevins:contact' %}">Contact</a></li>
                         </ul>
                     </div>
                 </div>

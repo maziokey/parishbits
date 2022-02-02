@@ -1,16 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>parishioner</title>
-</head>
-<body>
-    <div>
-        <h1>{{ parishioner.name }}</h1>
+{% extends 'stkev_base.html' %}
 
-        <h4>{{ parishioner.community }}</h4>
-    </div>
-</body>
-</html>
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Parishioner {% endblock title %}
+
+{% block content %}
+
+    <!-- page header
+    ================================================== -->
+    <section class="page-header page-header--events">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Parishioners Profile</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+    <section class="page-content">
+
+        <div class="row row-y-center series-content-p">
+
+            <div class="column large-12 church-staff__item">
+
+                <div class="church-staff__header">
+                    <div class="church-staff__picture">
+                        <img src="{{ parishioner.display_pic.url }}" alt="display_pic">
+                    </div>
+                    <h4 class="church-staff__name">
+                        {{ parishioner.name }}
+                        <span class="church-staff__position">
+                            {{ parishioner.id_number }}
+                        </span>
+                    </h4>
+                </div>
+
+                <ul class="event-meta">
+                    <li><strong>Registration Date</strong>{{ parishioner.registration_date }}</li>
+                    <li><strong>community</strong>{{ parishioner.community }}</li>
+                </ul>
+
+                <h4>Sacraments</h4>
+                <p>{{ parishioner.name }} has received the following sacraments.</p>
+
+                <ul class="event-meta">
+                {% for sacrament in parishioner.sacraments.all %}
+                    <li>{{ sacrament }}</li>
+                {% endfor %}
+                </ul>
+
+                <h4>Societies</h4>
+                <p>{{ parishioner.name }} is a member of the following Societies.</p>
+
+                <ul class="event-meta">
+                {% for society in parishioner.societies.all %}
+                    <li>{{ society }}</li>
+                {% endfor %}
+                </ul>
+
+                <h4>Levies</h4>
+                <p>{{ parishioner.name }} has paid for the following levies.</p>
+
+                <ul class="event-meta">
+                {% for levy in parishioner.levies.all %}
+                    <li>{{ levy.name }}</li>
+                {% endfor %}
+                </ul>
+
+                <h4>Contributions</h4>
+                <p>{{ parishioner.name }} made the following Contributions.</p>
+
+                <ul class="event-meta">
+                {% for contribution in parishioner.contributions.all %}
+                    <li>{{ contribution.name }}</li>
+                {% endfor %}
+                </ul>
+
+            </div>
+            
+        </div> <!-- series-content -->
+        
+    </section>
+    
+{% endblock content %}

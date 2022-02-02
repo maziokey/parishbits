@@ -6,7 +6,19 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 # Create your models here.
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super(PublishedManager,
+                     self).get_queryset()\
+                          .filter(status='published')
+
 class Event(models.Model):
+
+    STATUS_CHOICES = (
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    )
+
     title = models.CharField(max_length=250)
     content = models.TextField()
     date = models.DateField()
@@ -14,7 +26,11 @@ class Event(models.Model):
     venue = models.CharField(max_length=250)
     announcer = models.CharField(max_length=250)
     publish = models.DateTimeField(default=timezone.now)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     slug = models.SlugField(max_length=250, unique_for_date='publish')
+
+    objects = models.Manager()
+    published = PublishedManager()
 
     class Meta:
         ordering = ('-publish',)
@@ -101,6 +117,11 @@ class Parishioner(models.Model):
     def get_delete_url(self):
         return reverse('stkevins:parishioner_delete', kwargs={'slug': self.slug})
 
+    @property
+    def dp_url(self):
+        if self.display_pic and hasattr(self.display_pic, 'url'):
+            return self.display_pic.url
+
     class meta:
         ordering = ['name']
         verbose_name_plural = "parishioners"
@@ -109,30 +130,38 @@ class Levy(models.Model):
     parishioner = models.ForeignKey(Parishioner, blank=True, on_delete=models.CASCADE, related_name='levies')
     name = models.CharField(max_length=41)
     description = models.TextField()
+    publish = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(max_length=31, unique=True)
 
     def __str__(self):
-        return self.name
-
+        return self.name + " by " + self.parishioner.name
+    
     def get_absolute_url(self):
-        return reverse('stkevins:levy_detail', kwargs={'slug': self.slug})
+        return reverse('stkevins:levy_detail',
+                        args=[self.publish.year,
+                              self.publish.month,
+                              self.publish.day, self.slug])
 
     class meta:
-        ordering = ['name']
+        ordering = ('-publish',)
         verbose_name_plural = "levies"
 
 class Contribution(models.Model):
     parishioner = models.ForeignKey(Parishioner, blank=True, on_delete=models.CASCADE, related_name='contributions')
     name = models.CharField(max_length=41)
     description = models.TextField()
+    publish = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(max_length=31, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.name + " by " + self.parishioner.name
 
     def get_absolute_url(self):
-        return reverse('stkevins:contribution_detail', kwargs={'slug': self.slug})
+        return reverse('stkevins:contribution_detail',
+                        args=[self.publish.year,
+                              self.publish.month,
+                              self.publish.day, self.slug])
 
     class meta:
-        ordering = ['name']
+        ordering = ('-publish',)
         verbose_name_plural = "contributions"
