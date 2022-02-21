@@ -30,8 +30,8 @@
         <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-5.jpg' %})">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animated fadeInDown">Daily readings, reflections, and announcements</h2>
-              <p class="animated fadeInUp">find daily readings, reflections, announcements and much more.</p>
+              <h2 class="animated fadeInDown">Find a place to worship when away from home</h2>
+              <p class="animated fadeInUp">Knowing where and when to attend Mass can be the difference between attending and not attending.</p>
               
             </div>
           </div>
@@ -59,24 +59,24 @@
 
               <div class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                 <h3>ParishBits</h3>
-                <p>A collection of Parishes around you.</p>
+                <p>Information | Community | Worship</p>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                  <h4 class="title"><a href="{% url 'cathedral:parish' %}">Parishes</a></h4>
-                  <p class="description">Find a Parish.</p>
+                  <h4 class="title"><a href="{% url 'cathedral:gallery' %}">Abuja Arch-Diocese</a></h4>
+                  <p class="description">News & More.</p>
                 </div>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-gift"></i></div>
-                  <h4 class="title"><a href="{% url 'cathedral:gallery' %}">Activities</a></h4>
-                  <p class="description">Browse parish activities.</p>
+                  <h4 class="title"><a href="{% url 'cathedral:parish' %}">Parishes</a></h4>
+                  <p class="description">Find your Parish.</p>
                 </div>
     
                 <div class="icon-box">
                   <div class="icon"><i class="bx bx-atom"></i></div>
-                  <h4 class="title"><a href="#">Engage</a></h4>
-                  <p class="description">Engage with Parishioners.</p>
+                  <h4 class="title"><a href="{% url 'cathedral:contact' %}">Contact Us</a></h4>
+                  <p class="description">List your Parish.</p>
                 </div>
   
               </div>
@@ -89,30 +89,72 @@
       </div>
     </section><!-- End About Section -->
 
-    
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
+    <!-- ======= newabout Section ======= -->
+    <section id="newabout team" class="about team">
       <div class="container-fluid">
 
-        <div class="row counters">
+        <div class="row justify-content-center">
+            
+            <div class="col-xl-10 col-lg-10 col-md-10" data-wow-delay="0.1s">
 
-          <div class="col-lg-6 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Parish</p>
-          </div>
+              <div class="row">
 
-          <div class="col-lg-6 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Activities</p>
-          </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
 
-          
+                  <div class="member-k">
+  
+                    <img src="{% static 'assets/img/moz300-300.jpeg' %}" alt="">
+  
+                    <div class="member-k-info">
+  
+                      <div class="member-k-info-content">
+                        <h4>Fr. Benedict Ahamiojie</h4>
+                      </div>
+  
+                      <div class="social">
+                          <a href=""><i class="bi bi-facebook"></i></a>
+                      </div>
+    
+                    </div>
+                  
+                  </div>
+  
+                </div>
+
+                <div class="col-xl-9 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                  <h3>The Presentation of the Lord – Feast </h3>
+                  <h5>THE REDEEMER WAS REDEEMED AND THE BLESSING WAS BLESSED.</h5>
+
+                  <p class="description">
+                    "Every firstborn that issues from the womb, man and beast alike, is consecrated to Me…Therefore, you shall redeem every firstborn of your sons… and when your sons ask you what this means, you will tell them ‘by the strength of His Hand, Yahweh brought us out of Egypt and smote every firstborn of the land, man and beast alike. This is why I sacrifice to the LORD the firstborn male of every womb, but I redeem all the firstborn of my sons’."
+                  </p>
+                  <p class="description">
+                    (Exodus 13)
+                  </p>
+                </div>
+
+                <div class="col-xl-12 col-lg-6">
+
+                  <p class="description">
+                    The above text is the reason why Jesus was brought to the temple for Presentation. The Presentation was a thanksgiving ceremony, remembering what the Lord did in Egypt and acknowledging the firstborn child the Hebrew parents birthed forth. That is why Joseph and Mary came to the temple with two young pigeons: to redeem Jesus Christ! Even Jesus the Redeemer was redeemed (even though he did not need redemption). If not, the parents would not have been able to take him back home from the temple because the firstborn is consecrated to Yahweh… Now you understand why Hannah, the mother of Samuel, totally dedicated him to God and why he spent all his life in the temple. He was a firstborn that Hannah opted not to redeem. The process of redemption is sometimes bizarre and we must stay humble to reap of it. Hence, the Words of Jesus to John the Baptist: “That all righteousness might be fulfilled” to pass in our days. Amen and Amen!
+                  </p>
+
+                  <h3 style="text-align:left;">Rev. Fr. Benedict Ahamiojie, PhD</h3>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="text-center">
+                  <a class="btn btn-primary" href="#" role="button">More</a>
+                </div>
+              </div>
+
+            </div>
 
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section><!-- End Newabout Section -->
 
     
 
@@ -134,7 +176,7 @@
       <div class="container-fluid">
 
         <div class="section-title">
-          <h2>Parishes</h2>
+          <h2>Listed Parishes</h2>
           <h3>Find Your <span>Parish</span></h3>
           <p>Have a look at the parishes on our platform. There might be one right next to you.</p>
         </div>

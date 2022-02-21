@@ -1,0 +1,8 @@
+{% for message in messages %}
+    <div class="alert-box {{ message.tags }} hideit" role="alert">
+        <p>{{ message }}</p>
+        <i class="fa fa-times alert-box__close" aria-hidden="true"></i>
+    </div><!-- end error -->
+{% endfor %}
+
+

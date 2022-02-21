@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.mail import send_mail, BadHeaderError
+from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
 
 from .models import Event, Sacrament, Society, Community, Parishioner, Levy, Contribution
+
+from .forms import GroupForm, SocietyForm
 
 # Create your views here.
 class KevinsPageView(TemplateView):
@@ -119,3 +124,56 @@ class SearchResultsView(ListView):
             Q(name__icontains=query) | Q(id_number__icontains=query)
         )
         return object_list
+
+
+def groupmembershipView(request):
+    if request.method == 'GET':
+        form = GroupForm()
+    else:
+        form = GroupForm(request.POST)
+        if form.is_valid():
+            subject = "Group Membership Inquiry"
+            body = {
+                'name': form.cleaned_data['name'],
+                'parishioner_id': form.cleaned_data['parishioner_id'],
+                'group': form.cleaned_data['group'],
+                'email': form.cleaned_data['email'],
+                'phone': form.cleaned_data['phone'],
+                'motivation': form.cleaned_data['motivation'],
+            }
+            message = "\n".join(body.values())
+
+            try:
+                send_mail(subject, message, 'info@parishbits.com', ['juddyblaise@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            messages.success(request, 'Message Successfully Sent!', extra_tags='alert-box--success')
+            return redirect('stkevins:groupmembership')
+        messages.warning(request, 'Error. Message was not sent!', extra_tags='alert-box--error')
+    return render(request, "stkevins/group_membership.html", {'form': form})
+
+def societymembershipView(request):
+    if request.method == 'GET':
+        form = SocietyForm()
+    else:
+        form = SocietyForm(request.POST)
+        if form.is_valid():
+            subject = "Society Membership Inquiry"
+            body = {
+                'name': form.cleaned_data['name'],
+                'parishioner_id': form.cleaned_data['parishioner_id'],
+                'society': form.cleaned_data['society'],
+                'email': form.cleaned_data['email'],
+                'phone': form.cleaned_data['phone'],
+                'motivation': form.cleaned_data['motivation'],
+            }
+            message = "\n".join(body.values())
+
+            try:
+                send_mail(subject, message, 'info@parishbits.com', ['juddyblaise@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            messages.success(request, 'Message Successfully Sent!', extra_tags='alert-box--success')
+            return redirect('stkevins:societymembership')
+        messages.warning(request, 'Error. Message was not sent!', extra_tags='alert-box--error')
+    return render(request, "stkevins/society_membership.html", {'form': form})

@@ -1,0 +1,50 @@
+{% extends 'stkev_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}St Kevins, Jikwoyi - Join a Society {% endblock title %}
+
+{% block content %}
+
+    <!-- page header
+    ================================================== -->
+    <section class="page-header page-header--events">
+
+        <div class="gradient-overlay"></div>
+        <div class="row page-header__content">
+            <div class="column">
+                <h1>Society Membership</h1>
+            </div>
+        </div>
+
+    </section> <!-- end page-header -->
+
+    <section class="page-content">
+
+        <div class="row row-y-center series-content-p">
+            <div class="column large-full tab-full">
+
+                <h3>Society Membership Form</h3>
+
+                <form method="post" action="{% url 'stkevins:societymembership' %}" role="form">
+
+                    {% csrf_token %}
+
+                    {% crispy form %}
+
+                    <br>
+
+                    {% include 'messagess.html' %}
+                    
+                </form>
+
+            </div>
+        </div> <!-- series-content -->
+        
+    </section>
+
+{% endblock content %}

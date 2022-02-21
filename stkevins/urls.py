@@ -33,4 +33,7 @@ urlpatterns = [
 
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
 
+    path('group_membership/', views.groupmembershipView, name='groupmembership'),
+    path('society_membership/', views.societymembershipView, name='societymembership'),
+
 ]

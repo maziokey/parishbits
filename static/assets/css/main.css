@@ -950,6 +950,7 @@ select:-webkit-autofill:focus {
  *
  * ------------------------------------------------------------------- */
 .btn,
+.btny,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -976,7 +977,31 @@ input[type="button"] {
   border: 0.2rem solid #272727;
 }
 
+.btnz {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .6rem;
+  height: 6rem;
+  line-height: 2.5rem;
+  padding: 0 3.2rem;
+  margin: 0 .4rem 1.6rem 0;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #272727;
+  border: 0.2rem solid #272727;
+}
+
 .btn:hover,
+.btny:hover,
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
@@ -986,6 +1011,13 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+  outline: 0;
+}
+
+.btnz:hover {
   background-color: #000000;
   border-color: #000000;
   color: #ffffff;
@@ -1053,6 +1085,34 @@ button.btn--stroke {
 
 .btn--stroke:hover,
 button.btn--stroke:hover {
+  background: #000000 !important;
+  border: 0.2rem solid #000000;
+  color: #ffffff;
+}
+
+.btn--strokey,
+button.btn--strokey {
+  background: transparent !important;
+  border: 0.2rem solid #000000;
+  color: #000000;
+}
+
+.btn--strokey:hover,
+button.btn--strokey:hover {
+  background: #000000 !important;
+  border: 0.2rem solid #000000;
+  color: #ffffff;
+}
+
+.btn--strokez,
+button.btn--strokez {
+  background: transparent !important;
+  border: 0.2rem solid #000000;
+  color: #000000;
+}
+
+.btn--strokez:hover,
+button.btn--strokez:hover {
   background: #000000 !important;
   border: 0.2rem solid #000000;
   color: #ffffff;
@@ -2157,8 +2217,37 @@ input::-moz-focus-inner {
   margin-right: 0;
 }
 
+.hero-content__buttons .btny {
+  display: block;
+  border-color: #ffffff;
+  color: #ffffff;
+  width: 35rem;
+  margin-right: 0;
+}
+
+.hero-content__buttons .btnz {
+  display: block;
+  border-color: #ffffff;
+  color: #ffffff;
+  width: 35rem;
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+
 .hero-content__buttons .btn:hover,
 .hero-content__buttons .btn:focus {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+.hero-content__buttons .btny:hover,
+.hero-content__buttons .btny:focus {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+.hero-content__buttons .btnz:hover,
+.hero-content__buttons .btnz:focus {
   background-color: #ffffff !important;
   color: #000000;
 }
@@ -3785,6 +3874,14 @@ html.no-csstransitions .hero-content {
 
 .donation-text {
   color: #ffffff;
+}
+
+.bannerspan {
+  display: block;
+}
+
+.finance {
+  background-color: #efefef;
 }
 
 /*# sourceMappingURL=main.css.map */

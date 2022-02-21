@@ -37,6 +37,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['parishbits.com', 'www.parishbits.com', 'stkevinsjikwoyi.parishbits.com']
+#ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -169,7 +170,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = env("EMAIL_HOST")
@@ -186,7 +187,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ROOT_HOSTCONF = 'config.hosts'
 DEFAULT_HOST = 'www'
-# PARENT_HOST = 'parishbits.local:8000'
+#PARENT_HOST = 'parishbits.local:8000'
 PARENT_HOST = 'parishbits.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

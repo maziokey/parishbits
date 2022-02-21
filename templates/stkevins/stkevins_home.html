@@ -19,14 +19,25 @@
 
             <div class="column large-full hero-content__text">
                 <h1>
-                    Welcome To <br>
                     Saint Kevin's <br>
-                    Parish Jikwoyi
+                    Catholic Church <br>
+                    Jikwoyi
                 </h1>
 
                 <div class="hero-content__buttons">
-                    <a href="{% url 'stkevins:event_list' %}" class="btn btn--stroke">Upcoming Events</a>
-                    <a href="{% url 'stkevins:history' %}" class="btn btn--stroke">History</a>
+                    <a href="#" class="btnz btn--strokez">
+                        <span>Sunday Masses</span>
+                        <span style="display:block;">7:00AM | 9:00AM | 6:00PM</span>
+                    </a>
+                    <a href="#" class="btnz btn--strokez">
+                        <span>Weekday Masses</span>
+                        <span style="display:block;">6:00AM | 6:00PM</span>
+                    </a>
+                    <a href="#" class="btnz btn--strokez">
+                        <span>Saturdays</span>
+                        <span style="display:block;">Mass/Confessions: 7:00AM</span>
+                    </a>
+                    <a href="{% url 'stkevins:event_list' %}" class="btny btn--strokey">Announcements</a>
                 </div>
             </div> <!-- end hero-content__text -->
 
@@ -61,9 +72,14 @@
         <div class="row row-y-center about-content">
 
             <div class="column large-half medium-full">
-                <h3 class="subhead">St Kevin's, Jikwoyi</h3>
+                <img width="500" height="300" class="" alt="sample-image" src="{% static 'assets/img/frjim2.jpeg' %}">
+                <h3 style="color:white;">Rev. Fr. Moses Jimbili - Parish Priest</h3>
+            </div>
+
+            <div class="column large-half medium-full">
+                <h3 class="subhead">St Kevin's Catholic Church, Jikwoyi</h3>
                 <p>
-                St Kevin's Parish, Jikwoyi is a community of Catholic Faithful drawn from Jikwoyi and parts of Karu, Mararaba and Orozo.
+                St Kevin's Catholic Church, Jikwoyi is a community of Catholic Faithful drawn from Jikwoyi and parts of Karu, Mararaba and Orozo.
                 The Over 2000 member parish is pastored by Rev. Fr. Moses Jimbili (Parish Priest) and Rev. Fr. Sabastian Musa (Associate Priest), 
                 under the authority of His Grace, Most Rev. Dr. Ignatius Ayau Kaigama, Archbishop of the Metropolitan See of Abuja Ecclesiastical Province.
                 </p>
@@ -71,34 +87,7 @@
                     Parishioners of St. Kevin's, known for their zeal and cheerful disposition, are predominantly traders, civil servants and peasants.
                 </p>
                 
-                <a href="{% url 'stkevins:history' %}" class="btn btn--primary btn--about">More</a>
-            </div>
-
-            <div class="column large-half medium-full">
-                <ul class="about-sched">
-                    <li>
-                        <h4>Masses</h4>
-                        <p>
-                        Sundays - 6:00 AM | 8:00 AM | 10:00 AM <br>
-                        Weekdays - 6:00 AM | 12:00 PM | 6:00 PM <br>
-                        Mass Center, St Kevin's, Jikwoyi
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Exposition</h4>
-                        <p>
-                        Weekdays - 5:45 AM <br>
-                        Mass Center, St Kevin's, Jikwoyi
-                        </p>
-                    </li>
-                    <li>
-                        <h4>Confessions</h4>
-                        <p>
-                        Saturdays - 07:00 AM <br>
-                        Mass Center, St Kevin's, Jikwoyi
-                        </p>
-                    </li>
-                </ul> <!-- end about-sched-->
+                <a href="{% url 'stkevins:history' %}" class="btn btn--primary btn--about">Our History</a>
             </div>
 
         </div> <!-- end about-content -->
@@ -110,32 +99,45 @@
     ================================================== -->
     <section class="s-connect">
 
-        <div class="row connect-content">
-            <div class="column large-half tab-full">
-                <h3 class="display-1">Register with us.</h3>
-                <p>
-                At St Kevin's, we encourage our parishioners to become
-                registered members of this great catholic community.
-                Registered members enjoy unique benefits and have direct
-                access to previleges offered by the church. Click the 
-                link below to find out how to join and be part of this great 
-                catholic community. You are welcomed in the name of the Lord.
-                </p>
-
-                <a href="{% url 'stkevins:contact' %}" class="btn btn--primary h-full-width">I'm Interested</a>
+        <div class="row events-header">
+            <div class="column">
+                <h3 class="display-1">Membership.</h3>
             </div>
-            <div class="column large-half tab-full">
-                <h3 class="display-1">Join a Society.</h3>
+
+            
+
+        </div>
+
+        <div class="row connect-content">
+            <div class="column large-12 tab-full">
                 <p>
-                Being a registered member of St Kevin's Parish is a great first step.
-                Parishioners are also advised to join a pius society so as to 
-                participate actively in the mission of the church. There are many
-                interesting pius societies to join. To learn more about
-                the pius societies in St Kevin's Jikwoyi, click on the link
-                below. 
+                    But you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem, to an innumerable company of 
+                    angels, to the general assembly and church of the firstborn who are registered in heaven, to God the Judge of all, to 
+                    the spirits of just men made perfect, to Jesus the Mediator of the new covenant, and to the blood of sprinkling that 
+                    speaks better things than that of Abel.
                 </p>
 
-                <a href="{% url 'stkevins:society_list' %}" class="btn btn--primary h-full-width">Learn More</a>
+                <p class="churchy">Hebrews 12:22-24</p>
+
+                <h3 class="display-1 churchy">Are you a documented member of St. Kevin’s Parish?</h3>
+
+                <h4 class="churchy">
+                    Practicing Catholics belong to the Men, Women, or Youth Groups, and to a Pious Society in the Church. <br>
+                    Click below to join a Group or a Society and someone would reach out to you.
+                </h4>
+                <div class="row">
+                    <div class="column large-6 tab-full">
+                        <p>
+                            <a class="btn btn--primary h-full-width" href="{% url 'stkevins:groupmembership' %}">Join A Group</a>
+                        </p>
+                    </div>
+        
+                    <div class="column large-6 tab-full">
+                        <p>
+                            <a class="btn btn--primary h-full-width" href="{% url 'stkevins:societymembership' %}">Join A Society</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div> <!-- end connect-content  -->
 
@@ -148,7 +150,7 @@
 
         <div class="row events-header">
             <div class="column">
-                <h2 class="subhead">Upcoming Events.</h2>
+                <h2 class="subhead">Announcements.</h2>
             </div>
         </div> <!-- end event-header -->
 
@@ -157,6 +159,14 @@
             {% recent_events %}
 
         </div> <!-- end events-list -->
+
+        <div class="row add-bottom">
+            <div class="column large-full">
+                <p class="churchy">
+                    <a class="btn btn--primary" href="{% url 'stkevins:event_list' %}">More</a>
+                </p>
+            </div>
+        </div>
 
     </section> <!-- end s-events -->
 
@@ -207,7 +217,7 @@
 
                 <div class="row">
                     <div class="column large-12 tab-full">
-                        <h1 class="churchy">Are you committed to the work of spreading the Gospel through support for your local church?</h1>
+                        <h1 class="churchy">Are you fulfilling your financial obligations to your parish?</h1>
 
                         <h3 class="churchy">Pay To: </h3>
 
@@ -222,48 +232,79 @@
                 </div>
 
                 <div class="row donation">
-                    <div class="column large-4 tab-full donation-div">
+                    <div class="column large-3 tab-full donation-div">
 
                         <div class="mychurch-staff__picture">
                             <img src="{% static 'assets/img/avatars/AMC.jpeg' %}" alt="">
                         </div>
 
-                        <h3 class="churchy donation-text">Annual Mission Collection (AMC).</h3>
+                        <h3 class="churchy donation-text">Annual Mission Collection.</h3>
+                        <h5 class="churchy donation-text">N500/Year</h5>
                         <p class="churchy donation-text">
-                        It helps the church to<br>
-                        function from day to day.<br>
-                        Mon-Thur 8:30am – 4:30pm 
+                            Pay to: <br>
+                            0000000000 <br>
+                            St Kevin’s Cath Church <br>
+                            Sterling Bank <br>
+                            Call: 0800 100 2000
                         </p>
                     </div>
 
-                    <div class="column large-4 tab-full donation-div">
+                    <div class="column large-3 tab-full donation-div">
 
                         <div class="mychurch-staff__picture">
                             <img src="{% static 'assets/img/avatars/levy.jpg' %}" alt="">
                         </div>
 
-                        <h3 class="churchy donation-text">Harvest Levy.</h3>
+                        <h3 class="churchy donation-text">Harvest of Love 2022.</h3>
+                        <h5 class="churchy donation-text">Pay Levies/Make Donations/Redeem Pledges</h5>
                         <p class="churchy donation-text">
-                        It helps the parish to undertake<br>
-                        capital intensive development projects <br>
+                            Pay to: <br>
+                            0000000000 <br>
+                            St Kevin’s Cath Church <br>
+                            Sterling Bank <br>
+                            Call: 0800 100 2000
                         </p>
                     </div>
 
-                    <div class="column large-4 tab-full donation-div">
+                    <div class="column large-3 tab-full donation-div">
 
                         <div class="mychurch-staff__picture">
                             <img src="{% static 'assets/img/avatars/offering.jpg' %}" alt="">
                         </div>
 
                         <h3 class="churchy donation-text">Mass Offering.</h3>
+                        <h5 class="churchy donation-text">Book Masses/Make Offering</h5>
                         <p class="churchy donation-text">
-                            It helps the parish to procure<br>
-                            Sacristy items which are essential <br>
-                            for masses and the sacraments.
+                            Pay to: <br>
+                            0000000000 <br>
+                            St Kevin’s Cath Church <br>
+                            Sterling Bank <br>
+                            Call: 0800 100 2000
                         </p>
                         
                     </div>
+
+                    <div class="column large-3 tab-full donation-div">
+
+                        <div class="mychurch-staff__picture">
+                            <img src="{% static 'assets/img/avatars/offering.jpg' %}" alt="">
+                        </div>
+
+                        <h3 class="churchy donation-text">Church Building Project.</h3>
+                        <h5 class="churchy donation-text">Make Donations/Redeem Pledges</h5>
+                        <p class="churchy donation-text">
+                            Pay to: <br>
+                            0000000000 <br>
+                            St Kevin’s Cath Church <br>
+                            Sterling Bank <br>
+                            Call: 0800 100 2000
+                        </p>
+                        
+                    </div>
+
                 </div>
+
+                
 
                 <div class="row">
                     <div class="column large-full">
