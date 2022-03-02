@@ -1,0 +1,38 @@
+{% for reflection in latest_reflections %}
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+    <div class="member-k">
+  
+        <img src="{{ reflection.image.url }}">
+    
+        <div class="member-k-info">
+    
+          <div class="member-k-info-content">
+            <h4>{{ reflection.name }}</h4>
+          </div>
+    
+        </div>
+      
+    </div>
+
+</div>
+
+<div class="col-xl-9 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+
+    <h3>{{ reflection.title }}</h3>
+    <h5>{{ reflection.subtitle }}</h5>
+
+    <p class="description">
+        {{ reflection.content | safe | slice:":500" }}
+    </p>
+
+    <div class="text-center">
+        <a class="btn btn-primary" href="{{ reflection.get_absolute_url }}" role="button">More</a>
+    </div>
+
+</div>
+
+<div class="col-xl-12 col-lg-6">
+    <h3 style="text-align:left;">{{ reflection.name }}</h3>
+</div>
+{% endfor %}

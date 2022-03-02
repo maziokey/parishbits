@@ -12,6 +12,7 @@ dj-database-url = "~=0.5.0"
 gunicorn = "~=20.0.4"
 psycopg2-binary = "~=2.8.6"
 pillow = "*"
+django-summernote = "~=0.8.20.0"
 
 [dev-packages]
 

@@ -6,6 +6,8 @@
 
 {% load hosts %}
 
+{% load reflection_tags %}
+
 {% block content %}
     <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -16,7 +18,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-6.jpg' %})">
+        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/cat_lent.png' %})">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animated fadeInDown">Welcome to <span>ParishBits</span></h2>
@@ -99,54 +101,8 @@
 
               <div class="row">
 
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                {% recent_reflections 1 %}
 
-                  <div class="member-k">
-  
-                    <img src="{% static 'assets/img/frben.jpeg' %}" alt="">
-  
-                    <div class="member-k-info">
-  
-                      <div class="member-k-info-content">
-                        <h4>Fr. Benedict Ahamiojie</h4>
-                      </div>
-  
-                      <div class="social">
-                          <a href=""><i class="bi bi-facebook"></i></a>
-                      </div>
-    
-                    </div>
-                  
-                  </div>
-  
-                </div>
-
-                <div class="col-xl-9 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                  <h3>The Presentation of the Lord – Feast </h3>
-                  <h5>THE REDEEMER WAS REDEEMED AND THE BLESSING WAS BLESSED.</h5>
-
-                  <p class="description">
-                    "Every firstborn that issues from the womb, man and beast alike, is consecrated to Me…Therefore, you shall redeem every firstborn of your sons… and when your sons ask you what this means, you will tell them ‘by the strength of His Hand, Yahweh brought us out of Egypt and smote every firstborn of the land, man and beast alike. This is why I sacrifice to the LORD the firstborn male of every womb, but I redeem all the firstborn of my sons’."
-                  </p>
-                  <p class="description">
-                    (Exodus 13)
-                  </p>
-                </div>
-
-                <div class="col-xl-12 col-lg-6">
-
-                  <p class="description">
-                    The above text is the reason why Jesus was brought to the temple for Presentation. The Presentation was a thanksgiving ceremony, remembering what the Lord did in Egypt and acknowledging the firstborn child the Hebrew parents birthed forth. That is why Joseph and Mary came to the temple with two young pigeons: to redeem Jesus Christ! Even Jesus the Redeemer was redeemed (even though he did not need redemption). If not, the parents would not have been able to take him back home from the temple because the firstborn is consecrated to Yahweh… Now you understand why Hannah, the mother of Samuel, totally dedicated him to God and why he spent all his life in the temple. He was a firstborn that Hannah opted not to redeem. The process of redemption is sometimes bizarre and we must stay humble to reap of it. Hence, the Words of Jesus to John the Baptist: “That all righteousness might be fulfilled” to pass in our days. Amen and Amen!
-                  </p>
-
-                  <h3 style="text-align:left;">Rev. Fr. Benedict Ahamiojie, PhD</h3>
-                </div>
-
-              </div>
-              <div class="row">
-                <div class="text-center">
-                  <a class="btn btn-primary" href="#" role="button">More</a>
-                </div>
               </div>
 
             </div>

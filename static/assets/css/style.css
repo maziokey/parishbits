@@ -1689,3 +1689,18 @@ section {
   margin: 50px;
   padding: 50px;
 }
+
+.reflect {
+  display: flex;
+  justify-content: center;
+}
+
+.reflect img {
+  width: 300px;
+  height: 300px;
+}
+
+.reflect_c {
+  text-align: center;
+  margin-top: 20px;
+}

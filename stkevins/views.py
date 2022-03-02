@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
 
-from .models import Event, Sacrament, Society, Community, Parishioner, Levy, Contribution
+from .models import Event
 
 from .forms import GroupForm, SocietyForm
 
@@ -27,6 +27,8 @@ def event_detail(request, year, month, day, event):
     
     return render(request, 'stkevins/event_detail.html', {'event': event,})
 
+
+"""
 class SacramentListView(ListView):
     model = Sacrament
     context_object_name = 'sacrament_list'
@@ -104,6 +106,7 @@ class ParishionerDetailView(DetailView):
 
     def get_object(self, queryset=None):
         return Parishioner.objects.get(slug=self.kwargs.get("slug"))
+"""
 
 class ContactPageView(TemplateView):
     template_name = 'stkevins/contact.html'
@@ -113,7 +116,7 @@ class HistoryPageView(TemplateView):
 
 class GalleryPageView(TemplateView):
     template_name = 'stkevins/gallery.html'
-
+"""
 class SearchResultsView(ListView):
     model = Parishioner
     template_name = 'stkevins/search_results.html'
@@ -124,7 +127,7 @@ class SearchResultsView(ListView):
             Q(name__icontains=query) | Q(id_number__icontains=query)
         )
         return object_list
-
+"""
 
 def groupmembershipView(request):
     if request.method == 'GET':

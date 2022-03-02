@@ -11,7 +11,7 @@
 {% block content %}
     <!-- hero
     ================================================== -->
-    <section class="s-hero" data-parallax="scroll" data-image-src="{% static 'assets/img/home_bg.jpg' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section class="s-hero" data-parallax="scroll" data-image-src="{% static 'assets/img/slide/cat_lent.png' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="hero-left-bar"></div>
 
@@ -25,18 +25,18 @@
                 </h1>
 
                 <div class="hero-content__buttons">
-                    <a href="#" class="btnz btn--strokez">
+                    <div class="btnz btn--strokez">
                         <span>Sunday Masses</span>
-                        <span style="display:block;">7:00AM | 9:00AM | 6:00PM</span>
-                    </a>
-                    <a href="#" class="btnz btn--strokez">
-                        <span>Weekday Masses</span>
-                        <span style="display:block;">6:00AM | 6:00PM</span>
-                    </a>
-                    <a href="#" class="btnz btn--strokez">
-                        <span>Saturdays</span>
-                        <span style="display:block;">Mass/Confessions: 7:00AM</span>
-                    </a>
+                        <span style="display:block;">6:00AM | 8:00AM | 10:00AM</span>
+                    </div>
+                    <div class="btnz btn--strokez">
+                        <span>Mon - Sat</span>
+                        <span style="display:block;">6:00AM Mass</span>
+                    </div>
+                    <div class="btnz btn--strokez">
+                        <span>Mon | Wed | Fri</span>
+                        <span style="display:block;">6:00PM Mass</span>
+                    </div>
                     <a href="{% url 'stkevins:event_list' %}" class="btny btn--strokey">Announcements</a>
                 </div>
             </div> <!-- end hero-content__text -->
@@ -79,9 +79,10 @@
             <div class="column large-half medium-full">
                 <h3 class="subhead">St Kevin's Catholic Church, Jikwoyi</h3>
                 <p>
-                St Kevin's Catholic Church, Jikwoyi is a community of Catholic Faithful drawn from Jikwoyi and parts of Karu, Mararaba and Orozo.
-                The Over 2000 member parish is pastored by Rev. Fr. Moses Jimbili (Parish Priest) and Rev. Fr. Sabastian Musa (Associate Priest), 
-                under the authority of His Grace, Most Rev. Dr. Ignatius Ayau Kaigama, Archbishop of the Metropolitan See of Abuja Ecclesiastical Province.
+                    St Kevin's Catholic Church, Jikwoyi is a community of Catholic Faithful drawn from Jikwoyi Phase 3 and Dagbana. 
+                    The Over 2000 member parish is pastored by Rev. Fr. Moses Jimbili (Parish Priest) and Rev. Fr. Benneth Umeh (Associate Priest), 
+                    under the authority of His Grace, Most Rev. Dr. Ignatius Ayau Kaigama, Archbishop of the Metropolitan See of Abuja Ecclesiastical 
+                    Province.
                 </p>
                 <p>
                     Parishioners of St. Kevin's, known for their zeal and cheerful disposition, are predominantly traders, civil servants and peasants.

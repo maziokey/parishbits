@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% block title %}ParishBits - Reflections{% endblock title %}
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container-fluid">
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <ol>
+              <li><a href="{% url 'cathedral:home' %}">Home</a></li>
+              <li>Reflections</li>
+              <li>{{ reflection.title }}</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="bg-light pt-5 pb-5 shadow-sm">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Reflections</h2>
+          <h3>Reflections for <span>Parishioners</span></h3>
+          <p>Reflections for your soul</p>
+        </div>
+
+        <div class="container-fluid">
+    
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row">
+
+                        <div class="reflect">
+                            <img src="{{ reflection.image.url }}">
+                        </div>
+
+                        <div>
+                            <h3 class="reflect_c">{{ reflection.title }}</h3>
+                            <p>{{ reflection.content | safe }}</p>
+                            <h5>{{ reflection.name }}</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+      </div>
+    </section>
+
+    
+
+{% endblock content %}
+
+

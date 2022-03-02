@@ -1,11 +1,16 @@
 from django.contrib import admin
-from .models import Event, Parishioner, Community, Society, Contribution, Sacrament, Levy
+from django_summernote.admin import SummernoteModelAdmin
+from .models import Event
 
 # Register your models here.
-class Event_Admin(admin.ModelAdmin):
+class Event_Admin(SummernoteModelAdmin):
+    summernote_fields = ('content',)
     list_display = ("title", "date",)
     prepopulated_fields = {'slug': ('title',)}
 
+admin.site.register(Event, Event_Admin)
+
+"""
 class Sacrament_Admin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
@@ -25,10 +30,11 @@ class Levy_Admin(admin.ModelAdmin):
 class Contribution_Admin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(Event, Event_Admin)
 admin.site.register(Sacrament, Sacrament_Admin)
 admin.site.register(Community, Community_Admin)
 admin.site.register(Society, Society_Admin)
 admin.site.register(Parishioner, Parishioner_Admin)
 admin.site.register(Levy, Levy_Admin)
 admin.site.register(Contribution, Contribution_Admin)
+
+"""

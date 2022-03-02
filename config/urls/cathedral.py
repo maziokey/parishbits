@@ -6,6 +6,8 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('cathedral.urls', namespace='cathedral')),
     path('admin/', admin.site.urls),
+    # Summernote
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

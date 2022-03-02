@@ -1,15 +1,30 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django_hosts.resolvers import reverse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 
+from .models import Reflection
 from .forms import ContactForm
 
 # Create your views here.
 class HomePageView(TemplateView):
     template_name = 'cathedral/home.html'
+
+class ReflectionListView(ListView):
+    queryset = Reflection.published.all()
+    context_object_name = 'reflection_list'
+    paginate_by = 4
+    template_name = 'cathedral/reflection_list.html'
+
+def reflection_detail(request, year, month, day, reflection):
+    reflection = get_object_or_404(Reflection, slug=reflection,
+                                   publish__year=year,
+                                   publish__month=month,
+                                   publish__day=day)
+    
+    return render(request, 'cathedral/reflection_detail.html', {'reflection': reflection,})
 
 class ParishPageView(TemplateView):
     template_name = 'cathedral/parishes.html'

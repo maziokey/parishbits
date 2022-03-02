@@ -1017,12 +1017,12 @@ input[type="button"]:focus {
   outline: 0;
 }
 
-.btnz:hover {
+/*.btnz:hover {
   background-color: #000000;
   border-color: #000000;
   color: #ffffff;
   outline: 0;
-}
+}*/
 
 /* button primary
  * ------------------------------------------------- */
@@ -1106,17 +1106,18 @@ button.btn--strokey:hover {
 
 .btn--strokez,
 button.btn--strokez {
-  background: transparent !important;
+  background: goldenrod !important;
   border: 0.2rem solid #000000;
-  color: #000000;
+  color: goldenrod;
 }
 
+/*
 .btn--strokez:hover,
 button.btn--strokez:hover {
   background: #000000 !important;
   border: 0.2rem solid #000000;
   color: #ffffff;
-}
+}*/
 
 .btn--pill,
 button.btn--pill {
@@ -2246,11 +2247,12 @@ input::-moz-focus-inner {
   color: #000000;
 }
 
+/*
 .hero-content__buttons .btnz:hover,
 .hero-content__buttons .btnz:focus {
   background-color: #ffffff !important;
   color: #000000;
-}
+}*/
 
 /* ------------------------------------------------------------------- 
  * ## hero social

@@ -49,7 +49,7 @@ class Event(models.Model):
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
-
+"""
 class Sacrament(models.Model):
     name = models.CharField(max_length=41)
     description = models.TextField()
@@ -165,3 +165,5 @@ class Contribution(models.Model):
     class meta:
         ordering = ('-publish',)
         verbose_name_plural = "contributions"
+
+"""
