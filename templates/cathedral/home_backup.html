@@ -1,0 +1,180 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% load hosts %}
+
+{% load reflection_tags %}
+
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/cat_lent.png' %})">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animated fadeInDown">Welcome to <span>ParishBits</span></h2>
+              <p class="animated fadeInUp">Your Parish Announcements Updated Weekly.</p>
+              <a href="#about" class="btn-get-started animated fadeInUp scrollto">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url({% static 'assets/img/slide/slide-5.jpg' %})">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animated fadeInDown">Find a place to worship when away from home</h2>
+              <p class="animated fadeInUp">Knowing where and when to attend Mass can be the difference between attending and not attending.</p>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+          <div class="row justify-content-center">
+
+              <div class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                <h3>ParishBits</h3>
+                <p>Information | Community | Worship</p>
+    
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                  <h4 class="title"><a href="{% url 'cathedral:gallery' %}">Abuja Arch-Diocese</a></h4>
+                  <p class="description">News & More.</p>
+                </div>
+    
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-gift"></i></div>
+                  <h4 class="title"><a href="{% url 'cathedral:parish' %}">Parishes</a></h4>
+                  <p class="description">Find your Parish.</p>
+                </div>
+    
+                <div class="icon-box">
+                  <div class="icon"><i class="bx bx-atom"></i></div>
+                  <h4 class="title"><a href="{% url 'cathedral:contact' %}">Contact Us</a></h4>
+                  <p class="description">List your Parish.</p>
+                </div>
+  
+              </div>
+
+              <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative"></div>
+              
+
+          </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= newabout Section ======= -->
+    <section id="newabout team" class="about team">
+      <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            
+            <div class="col-xl-10 col-lg-10 col-md-10" data-wow-delay="0.1s">
+
+              <div class="row">
+
+                {% recent_reflections 1 %}
+
+              </div>
+
+            </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Newabout Section -->
+
+    
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Enroll a Community</h3>
+          <p> Are you a leader or member of a community not listed on Prisus? Contact us today to get your community enrolled.</p>
+          <a class="cta-btn" href="{% url 'cathedral:contact' %}">Contact Us</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+     <!-- ======= Services Section ======= -->
+     <section id="services" class="services">
+      <div class="container-fluid">
+
+        <div class="section-title">
+          <h2>Listed Parishes</h2>
+          <h3>Find Your <span>Parish</span></h3>
+          <p>Have a look at the parishes on our platform. There might be one right next to you.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-pie-chart-line"></i></div>
+                <h4 class="title"><a href="{% host_url 'stkevins:stkevins' host 'stkevinsjikwoyi' %}">St Kevins, Jikwoyi</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-stack-line"></i></div>
+                <h4 class="title"><a href="#">Holy Rosary, Wuse</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-markup-line"></i></div>
+                <h4 class="title"><a href="#">Holy Family, Lifecamp</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-shape-line"></i></div>
+                <h4 class="title"><a href="#">St John, Gwagwalada</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-fingerprint-line"></i></div>
+                <h4 class="title"><a href="#">St Ignatius, Bwari</a></h4>
+              </div>
+              <div class="col-lg-4 col-md-6 icon-box">
+                <div class="icon"><i class="ri-body-scan-line"></i></div>
+                <h4 class="title"><a href="#">St Thomas Aquinas, Wuye.</a></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-center">
+                <a class="btn btn-primary" href="{% url 'cathedral:parish' %}" role="button">Find Your Parish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    
+{% endblock content %}

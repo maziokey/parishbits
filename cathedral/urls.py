@@ -6,6 +6,7 @@ app_name = 'cathedral'
 
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
+    #path('test/', views.TestPageView.as_view(), name='test'),
 
     path('reflections/', views.ReflectionListView.as_view(), name='reflection_list'),
     path('reflections/<int:year>/<int:month>/<int:day>/<slug:reflection>/', views.reflection_detail, name='reflection_detail'),

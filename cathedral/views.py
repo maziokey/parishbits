@@ -12,6 +12,9 @@ from .forms import ContactForm
 class HomePageView(TemplateView):
     template_name = 'cathedral/home.html'
 
+class TestPageView(TemplateView):
+    template_name = 'cathedral/test_h.html'
+
 class ReflectionListView(ListView):
     queryset = Reflection.published.all()
     context_object_name = 'reflection_list'
@@ -54,7 +57,7 @@ def basecontactView(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, 'info@parishbits.com', ['okeyluvsu2004@gmail.com'])
+                send_mail(subject, message, 'info@parishbits.com', ['juddyblaise@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             messages.success(request, 'Message Successfully Sent!')
