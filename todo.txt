@@ -1,7 +1,8 @@
-add content to parishes
-add content to gallery
-change slides on home
-
-add societies and communities list and detail pages
-
-modify model levy and contribution - name - lenght - 60
+programmatically add cathedral home page slides - Done
+programmatically add cathedral ads - Done
+programmatically add cathedral welcome image - Done
+programmatically change stkevin banner image - Done
+programmatically change stkevin parish priest image - Done
+create model for main event
+programmatically change stkevin advert images - Done
+create aws bucket for static images

@@ -49,6 +49,16 @@ class Event(models.Model):
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
+class HomeBanner(models.Model):
+    image = models.ImageField(upload_to="banners/", default="/banners/home_bg.jpg")
+
+class ParishPriest(models.Model):
+    image = models.ImageField(upload_to="banners/", default="/banners/frjim2.jpeg")
+    name = models.CharField(max_length=250)
+
+class AdSlide(models.Model):
+    slide = models.ImageField(upload_to="banners/", default="/banners/img1.jpg")
+
 """
 class Sacrament(models.Model):
     name = models.CharField(max_length=41)

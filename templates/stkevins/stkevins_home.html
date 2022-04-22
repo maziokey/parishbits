@@ -11,7 +11,7 @@
 {% block content %}
     <!-- hero
     ================================================== -->
-    <section class="s-hero" data-parallax="scroll" data-image-src="{% static 'assets/img/slide/cat_lent.png' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+    <section class="s-hero" data-parallax="scroll" data-image-src="{{ home_banner.image.url }}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
 
         <div class="hero-left-bar"></div>
 
@@ -72,8 +72,8 @@
         <div class="row row-y-center about-content">
 
             <div class="column large-half medium-full">
-                <img width="500" height="300" class="" alt="sample-image" src="{% static 'assets/img/frjim2.jpeg' %}">
-                <h3 style="color:white;">Rev. Fr. Moses Jimbili - Parish Priest</h3>
+                <img width="500" height="300" class="" alt="sample-image" src="{{ parish_priest.image.url }}">
+                <h3 style="color:white;">{{ parish_priest.name }} - Parish Priest</h3>
             </div>
 
             <div class="column large-half medium-full">
@@ -313,16 +313,18 @@
                         <h1>Adverts at St Kevins, Jikwoyi.</h1>
         
                         <div id="slideshow">
-        
-                            <div>  
-                              <img src="{% static 'assets/img/img1.jpg' %}">
-                            </div>
-                            <div>
-                              <img src="{% static 'assets/img/img2.jpg' %}">
-                            </div>
-                            <div>
-                              <img src="{% static 'assets/img/img3.jpg' %}">
-                            </div>
+
+                            {% for obj in slider %}
+                                {% if forloop.first %}
+                                    <div>
+                                      <img src="{{ obj.slide.url }}">
+                                    </div>
+                                {% else %}
+                                    <div>
+                                      <img src="{{ obj.slide.url }}">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
         
                         </div>
         

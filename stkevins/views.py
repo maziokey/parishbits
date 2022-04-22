@@ -5,13 +5,20 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
 
-from .models import Event
+from .models import Event, AdSlide, ParishPriest, HomeBanner
 
 from .forms import GroupForm, SocietyForm
 
 # Create your views here.
 class KevinsPageView(TemplateView):
     template_name = 'stkevins/stkevins_home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(KevinsPageView, self).get_context_data(**kwargs)
+        context["home_banner"] = HomeBanner.objects.get(id=1)
+        context["parish_priest"] = ParishPriest.objects.get(id=1)
+        context["slider"] = AdSlide.objects.all()
+        return context
 
 class EventListView(ListView):
     queryset = Event.published.all()

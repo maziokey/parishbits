@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Event
+from .models import Event, AdSlide, HomeBanner, ParishPriest
 
 # Register your models here.
 class Event_Admin(SummernoteModelAdmin):
@@ -8,7 +8,19 @@ class Event_Admin(SummernoteModelAdmin):
     list_display = ("title", "date",)
     prepopulated_fields = {'slug': ('title',)}
 
+class HomeBanner_Admin(admin.ModelAdmin):
+    list_display = ("id", "image",)
+
+class AdSlide_Admin(admin.ModelAdmin):
+    list_display = ("id", "slide",)
+
+class ParishPriest_Admin(admin.ModelAdmin):
+    list_display = ("name", "image",)
+
 admin.site.register(Event, Event_Admin)
+admin.site.register(HomeBanner, HomeBanner_Admin)
+admin.site.register(AdSlide, AdSlide_Admin)
+admin.site.register(ParishPriest, ParishPriest_Admin)
 
 """
 class Sacrament_Admin(admin.ModelAdmin):

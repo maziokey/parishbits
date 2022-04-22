@@ -549,7 +549,6 @@ section {
   font-size: 14px;
 }
 .about .video-box {
-  background: url("../img/lent4.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
 }
