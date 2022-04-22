@@ -18,25 +18,25 @@
     <div class="carousel-inner" role="listbox">
 
       {% for banner in home_banners %}
-        {% if forloop.first %}
-            <div class="carousel-item active" style="background-image: url('{{ banner.slide.url }}')">
-              <div class="carousel-container">
-                <div class="container">
-                  <h2 class="animated fadeInDown">{{ banner.title }}</h2>
-                  <p class="animated fadeInUp">{{ banner.subtitle }}</p>
-                </div>
-              </div>
-            </div>
-        {% else %}
-            <div class="carousel-item" style="background-image: url('{{ banner.slide.url }}')">
-              <div class="carousel-container">
-                <div class="container">
-                  <h2 class="animated fadeInDown">{{ banner.title }}</h2>
-                  <p class="animated fadeInUp">{{ banner.subtitle }}</p>
-                </div>
-              </div>
-            </div>
-        {% endif %}
+      {% if forloop.first %}
+      <div class="carousel-item active" style="background-image: url('{{ banner.slide.url }}')">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animated fadeInDown">{{ banner.title }}</h2>
+            <p class="animated fadeInUp">{{ banner.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="carousel-item" style="background-image: url('{{ banner.slide.url }}')">
+        <div class="carousel-container">
+          <div class="container">
+            <h2 class="animated fadeInDown">{{ banner.title }}</h2>
+            <p class="animated fadeInUp">{{ banner.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
       {% endfor %}
 
     </div>
@@ -84,7 +84,8 @@
 
         </div>
 
-        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative" style="background: url('{{ welcome_image.image.url }}') center center no-repeat;">
+        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative"
+          style="background: url('{{ welcome_image.image.url }}') center center no-repeat;">
         </div>
 
 
@@ -111,7 +112,9 @@
 
         <div class="col-xl-2">
           <div class="row">
-            <img src="{{ banner_two.banner.url }}" alt="banner_two_img">
+            <a href="{{ banner_two.link }}">
+              <img src="{{ banner_two.banner.url }}" alt="banner_two_img">
+            </a>
           </div>
         </div>
 
@@ -179,13 +182,13 @@
 
           </div>
 
-
-
         </div>
 
         <div class="col-xl-2">
           <div class="row">
-            <img src="{{ banner_one.banner.url }}" alt="banner_one_img">
+            <a href="{{ banner_one.link }}">
+              <img src="{{ banner_one.banner.url }}" alt="banner_one_img">
+            </a>
           </div>
         </div>
 

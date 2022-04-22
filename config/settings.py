@@ -37,7 +37,11 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
 # DEBUG = True
 
-ALLOWED_HOSTS = ['parishbits.com', 'www.parishbits.com', 'stkevinsjikwoyi.parishbits.com']
+ALLOWED_HOSTS = [
+    "parishbits.com",
+    "www.parishbits.com",
+    "stkevinsjikwoyi.parishbits.com",
+]
 # ALLOWED_HOSTS = ["*"]
 
 
@@ -105,13 +109,13 @@ DATABASES = {
 """
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env("DATABASE_NAME"),
-        'USER': env("DATABASE_USER"),
-        'PASSWORD': env("DATABASE_PASSWORD"),
-        'HOST': env("DATABASE_HOST"),
-        'PORT': env("DATABASE_PORT"),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DATABASE_NAME"),
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST"),
+        "PORT": env("DATABASE_PORT"),
     }
 }
 
@@ -172,13 +176,13 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = env("EMAIL_PORT")
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'info@parishbits.com'
+DEFAULT_FROM_EMAIL = "info@parishbits.com"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -188,7 +192,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ROOT_HOSTCONF = "config.hosts"
 DEFAULT_HOST = "www"
 # PARENT_HOST = "parishbits.local:8000"
-PARENT_HOST = 'parishbits.com'
+PARENT_HOST = "parishbits.com"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 

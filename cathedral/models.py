@@ -61,11 +61,16 @@ class HomeBanners(models.Model):
     )
     slide = models.ImageField(upload_to="banners/", default="/banners/slide-5.jpg")
 
+
 class HomeWelcomeImage(models.Model):
     image = models.ImageField(upload_to="banners/", default="/banners/parish.jpg")
 
+
 class AdBannerOne(models.Model):
+    link = models.URLField(max_length=200, default="https://parishbits.com")
     banner = models.ImageField(upload_to="banners/", default="/banners/300x600.png")
 
+
 class AdBannerTwo(models.Model):
+    link = models.URLField(max_length=200, default="https://parishbits.com")
     banner = models.ImageField(upload_to="banners/", default="/banners/300x600.png")
